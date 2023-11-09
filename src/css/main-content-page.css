@@ -5,3 +5,40 @@
   max-width: 996px;
   height: auto;
 }
+.main-content-list {
+  margin-top: 40px;
+  margin-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 24px;
+}
+.head-main-h {
+  margin-left: 40px;
+}
+
+.photo-card {
+  width: 180px;
+  height: 306px;
+}
+.images-prev {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+}
+
+.info-itemt-itle {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+}
+.info-item-author {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+}
