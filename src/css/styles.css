@@ -19,10 +19,9 @@
 
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
-
+  /* 
   -- black-color: rgba(17, 17, 17, 1);
-  -- dark-gray: rgba(17, 17, 17, 1);
- 
+  -- dark-gray: rgba(17, 17, 17, 1); */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -40,5 +39,6 @@
   display: flex;
   flex-direction: column;
 }
-
-
+.categoryItem {
+  border: 1px black solid;
+}
