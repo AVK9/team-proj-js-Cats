@@ -4,7 +4,7 @@ import listCategory from './axios'
 const catList = document.querySelector('.categoriesList');
 
 try {
-const resp = await listCategory();
+const resp = listCategory();
 
 markupCatList(resp)
   }
