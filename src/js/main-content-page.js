@@ -42,7 +42,7 @@ async function getSelectedCategory(selectedCategory) {
              <img class="images-prev" src="${book_image}"
               alt="${title}" width ='180' loading="lazy" />
                 <div class="info">
-                   <p class="info-itemt-itle"><b>${title}</b></p>
+                   <p class="info-item-title"><b>${title}</b></p>
                    <p class="info-item-author"><b>${author}</b></p>
              </div>
        </li>
