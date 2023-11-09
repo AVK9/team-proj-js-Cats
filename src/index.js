@@ -1,5 +1,5 @@
 import './js/axios';
-import './js/part-all-categories';
+import './js/part-all-categories';  
 
 
 
