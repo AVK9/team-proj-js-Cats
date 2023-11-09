@@ -8,6 +8,8 @@
 @import url('./header.css');
 @import url('./part-all-categories.css');
 @import url('./support-ukraine.css');
+@import url('./main-content-page.css');
+@import url('./popup-menu.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -23,4 +25,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
 }

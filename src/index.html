@@ -9,25 +9,26 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <div class="wrapper">
     <load ="partials/header.html" />
     
 
     <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
+      
     </section>
 
     <!-- Loads the specified .html file -->
-    <load ="partials/part-all-categories.html" />
-    <load="partials/support-ukraine.html" />
+    <div class="main-content">
+      <div class="side-bar">
+          <load="partials/part-all-categories.html" />
+          <load="partials/support-ukraine.html" />
+      </div>
+            <load="partials/main-content-page.html" />
+     </div>
 
+        <load="partials/popup-menu.html" />
 
-
-
-
-
-
+</div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
