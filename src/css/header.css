@@ -106,7 +106,13 @@ body {
 .dark-mode-main-content {
   background-color: #202024;
 }
+<<<<<<< Updated upstream
 
+=======
+.dark-mode-all-categoriesdark-mode-category-item {
+  color: #ffffff99;
+}
+>>>>>>> Stashed changes
 .switch {
   position: relative;
   display: inline-block;
