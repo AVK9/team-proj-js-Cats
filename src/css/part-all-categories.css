@@ -25,12 +25,14 @@
   color: var(--violet-color);
   text-transform: uppercase;
   font-weight: 700;
+  transition:  50ms;
 }
 .categoryItem {
   margin-bottom: 24px;
   height: 18px;
   /*color: #11111199;*/
   text-align: left;
+ 
 }
 .categoryItem:focus {
   color: var(--violet-color);
