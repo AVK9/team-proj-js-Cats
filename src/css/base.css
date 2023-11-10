@@ -6,6 +6,7 @@ body {
   color: var(--main-font-color);
   background-color: var(--main-background-color);
   height: 100%;
+  background-color: --background;
 }
 .wrapper {
   min-height: 100vh;
