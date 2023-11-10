@@ -2,23 +2,22 @@
   max-width: 307px;
   height: 228px;
   overflow-y: scroll;
- /*background-color: var(--white-background);*/
+  /*background-color: var(--white-background);*/
   margin-bottom: 86px;
   margin-left: 20px;
   margin-top: 40px;
 }
 
-.categoryItem:hover{
-  color:  var(--violet-color);
+.categoryItem:hover {
+  color: var(--violet-color);
   text-transform: uppercase;
   font-weight: 700;
 }
 .categoryItem {
-
-  margin-bottom: 24px ;
-    color: #11111199;
-    text-align: left;
+  margin-bottom: 24px;
+  color: #11111199;
+  text-align: left;
 }
 .categoryItem:focus {
-  color:  var(--violet-color);
+  color: var(--violet-color);
 }
