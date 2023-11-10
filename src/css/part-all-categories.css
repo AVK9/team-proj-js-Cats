@@ -1,10 +1,24 @@
 .allCategoriesBox {
-  max-width: 356px;
-  height: 472px;
+  max-width: 307px;
+  height: 228px;
   overflow-y: scroll;
-  background-color: rgb(248, 243, 236);
+ /*background-color: var(--white-background);*/
   margin-bottom: 86px;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.categoryItem:hover{
+  color:  var(--violet-color);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .categoryItem {
-  /* display: inline-flex; */
+
+  margin-bottom: 24px ;
+    color: #11111199;
+    text-align: left;
+}
+.categoryItem:focus {
+  color:  var(--violet-color);
 }
