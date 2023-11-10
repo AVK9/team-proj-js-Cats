@@ -2,7 +2,7 @@
   max-width: 356px;
   height: 472px;
   overflow-y: scroll;
-  background-color: rgb(248, 243, 236);
+  /* background-color: rgb(248, 243, 236); */
   margin-bottom: 86px;
 }
 .categoryItem {
