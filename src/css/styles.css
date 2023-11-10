@@ -14,6 +14,7 @@
 @import url('./popup-menu.css');
 @import url('./base.css');
 @import url('./fonts.css');
+@import url('./shopping-list.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
