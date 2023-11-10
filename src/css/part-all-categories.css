@@ -10,17 +10,14 @@
 }
 .allCategoriesBox::-webkit-scrollbar {
   max-width: 8px;
-
   max-height: 14px;
 
 }
 
 .allCategoriesBox::-webkit-scrollbar-thumb {
   background-color: #e0e0e0;
- 
   border-radius: 12px;
   width: 8px;
-  
  height: 14px;
 }
 
