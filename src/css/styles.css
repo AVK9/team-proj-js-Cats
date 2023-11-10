@@ -21,13 +21,13 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
+  
   --black-color: rgba(17, 17, 17, 1);
   --dack-gray-color: rgba(32, 32, 36, 1);
   --violet-color: rgba(79, 46, 232, 1);
   --yellow-color: rgba(234, 198, 69, 1);
   --white-background: rgba(255, 255, 255, 1);
-
+  
   --color-text: rgba(17, 17, 17, 1)
   --color-text-dack-thema: rgba(255, 255, 255, 1)
 }
