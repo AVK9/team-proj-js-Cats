@@ -10,7 +10,7 @@
 }
 .allCategoriesBox::-webkit-scrollbar {
   max-width: 8px;
-  
+
   max-height: 14px;
 
 }
@@ -20,6 +20,7 @@
  
   border-radius: 12px;
   width: 8px;
+  
  height: 14px;
 }
 
