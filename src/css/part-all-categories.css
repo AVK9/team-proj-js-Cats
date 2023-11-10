@@ -37,12 +37,3 @@
 .categoryItem:focus {
   color: var(--violet-color);
 }
-.categoriesList{
-
-}
-.dark-mode-all-categories{
-  color:white;
-}
-.dark-mode-all-categories:hover{
-  color:white;
-}
