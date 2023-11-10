@@ -59,7 +59,28 @@ async function getSelectedCategory(selectedCategory) {
   }
 };
 
- function onSelectedCategory(respArr) {
+function onSelectedCategory(respArr) {
+   
+let headMaidCss;
+
+function headMaker (category){
+// const category = "Combined Print and E-Book Nonfiction";
+const fixLast = category.length - category.lastIndexOf(' ');
+const lastWorld = category.substring(category.length - fixLast);
+let lengthFirstPart = category.length - lastWorld.length;
+const firstPartLenght = category - lengthFirstPart;
+const firstPart = category.slice(0, lengthFirstPart);
+
+// console.log(firstPart);
+// console.log(lastWorld);
+ return headMaidCss = `<h1 class="head-main-h">${firstPart}
+  <span class="head-main-h head-main-hdecor">
+  ${lastWorld}
+  </span>
+   </h1>`};
+headMaker (selectedCategory)
+   console.log(headMaidCss);
+  
    const markupSelectedCategory = respArr.map(({
         author,
         book_image,
@@ -79,10 +100,11 @@ async function getSelectedCategory(selectedCategory) {
              </div>
        </li>
        `).join("");
-     const contentPageCat = `<h1 class="head-main-h">${selectedCategory}</h1>
+     const contentPageCat = `${headMaidCss}
 <ul class="main-content-list">
     ${markupSelectedCategory}
 </ul>`;
-     mainContentPage.innerHTML = contentPageCat;
+   mainContentPage.innerHTML = contentPageCat;
+
 }
 
