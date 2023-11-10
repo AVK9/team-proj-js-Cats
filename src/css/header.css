@@ -106,13 +106,6 @@ body {
 .dark-mode-main-content {
   background-color: #202024;
 }
-<<<<<<< Updated upstream
-
-=======
-.dark-mode-all-categoriesdark-mode-category-item {
-  color: #ffffff99;
-}
->>>>>>> Stashed changes
 .switch {
   position: relative;
   display: inline-block;
@@ -120,7 +113,9 @@ body {
   height: 20px;
   margin-left: auto;
 }
-
+.dark-mode-all-categoriesdark-mode-category-item {
+  color: #ffffff99;
+}
 .switch input {
   opacity: 0;
   width: 0;
