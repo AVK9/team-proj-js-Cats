@@ -16,6 +16,7 @@
   margin-bottom: 24px;
   color: #11111199;
   text-align: left;
+  
 }
 .categoryItem:focus {
   color: var(--violet-color);
