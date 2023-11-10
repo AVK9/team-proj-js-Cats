@@ -32,15 +32,3 @@
   --color-text-dack-thema: rgba(255, 255, 255, 1)
 }
 
-.main-content {
-  display: flex;
-  /* flex-wrap: wrap; */
-}
-
-.side-bar {
-  display: flex;
-  flex-direction: column;
-}
-.categoryItem {
-  border: 1px black solid;
-}

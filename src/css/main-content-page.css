@@ -1,3 +1,31 @@
+.head-main-h {
+  color: --black-color;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1.92px;
+  margin-left: 40px;
+}
+
+.head-main-hdecor {
+  color: rgba(79, 46, 232, 1);
+  margin-left: 0;
+}
+
+.main-content {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+}
+.categoryItem {
+  /* border: 1px black solid; */
+  height: 40px;
+}
+
 .main-content-page {
   background-color: rgb(239, 239, 240);
   min-width: 280px;
@@ -11,9 +39,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px 24px;
-}
-.head-main-h {
-  margin-left: 40px;
 }
 
 .photo-card {
