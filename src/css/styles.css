@@ -9,25 +9,25 @@
 @import url('./part-all-categories.css');
 @import url('./support-ukraine.css');
 @import url('./main-content-page.css');
+@import url('./part-bestseller.css');
 @import url('./popup-menu.css');
+@import url('./base.css');
+@import url('./fonts.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-  /* 
-  -- black-color: rgba(17, 17, 17, 1);
-  -- dark-gray: rgba(17, 17, 17, 1); */
+  --black-color: rgba(17, 17, 17, 1);
+  --dack-gray-color: rgba(32, 32, 36, 1);
+  --violet-color: rgba(79, 46, 232, 1);
+  --yellow-color: rgba(234, 198, 69, 1);
+  --white-background: rgba(255, 255, 255, 1);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --color-text: rgba(17, 17, 17, 1)
+  --color-text-dack-thema: rgba(255, 255, 255, 1)
 }
 
 .main-content {
