@@ -1,29 +1,22 @@
-.head-main-h {
-  color: --black-color;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 52px;
-  letter-spacing: -1.92px;
-  margin-left: 40px;
-}
-
-.head-main-hdecor {
-  color: rgba(79, 46, 232, 1);
-  margin-left: 0;
-}
-
 .main-content {
+  background-color: blanchedalmond;
   display: flex;
+  margin-top: 40px;
   /* flex-wrap: wrap; */
 }
-
 .side-bar {
   display: flex;
   flex-direction: column;
 }
-.categoryItem {
-  /* border: 1px black solid; */
-  height: 40px;
+.allCategoriesBox {
+  background-color: blue;
+  max-width: 335px;
+  height: 472px;
+  overflow-y: scroll;
+  /* background-color: rgb(248, 243, 236); */
+  margin-bottom: 86px;
+}
+.box-support-ukraine {
 }
 
 .main-content-page {
@@ -41,6 +34,19 @@
   gap: 40px 24px;
 }
 
+.head-main-h {
+  color: --black-color;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1.92px;
+  margin-left: 40px;
+}
+
+.head-main-hdecor {
+  color: rgba(79, 46, 232, 1);
+  margin-left: 0;
+}
 .photo-card {
   width: 180px;
   height: 306px;
