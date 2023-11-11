@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 const BASEURL = 'https://books-backend.p.goit.global';
 const CATSELECT = '/books/category?category=';
 
-const mainContentPage = document.querySelector('.main-content-page');
+ const mainContentPage = document.querySelector('.main-content-page');
 let selectedCategory = '';
 const catListItem = document.querySelector('.categoriesList');
 
@@ -70,7 +70,6 @@ const lastWorld = category.substring(category.length - fixLast);
 let lengthFirstPart = category.length - lastWorld.length;
 const firstPartLenght = category - lengthFirstPart;
 const firstPart = category.slice(0, lengthFirstPart);
-
 // console.log(firstPart);
 // console.log(lastWorld);
  return headMaidCss = `<h1 class="head-main-h">${firstPart}
@@ -79,7 +78,7 @@ const firstPart = category.slice(0, lengthFirstPart);
   </span>
    </h1>`};
 headMaker (selectedCategory)
-   console.log(headMaidCss);
+  //  console.log(headMaidCss);
   
    const markupSelectedCategory = respArr.map(({
         author,
@@ -107,4 +106,3 @@ headMaker (selectedCategory)
    mainContentPage.innerHTML = contentPageCat;
 
 }
-
