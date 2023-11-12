@@ -31,24 +31,124 @@
   margin-left: auto;
   @media screen and (min-width: 768px) {
     margin-top: 140px;
-    max-width: 322px;
+    max-width: 349px;
   }
 }
-.shopping-list-text {
+.shopping-list-empty-text {
   display: block;
-  max-width: 244px;
   color: rgba(0, 0, 0, 0.6000000238418579);
   text-align: center;
   font-size: 14px;
   @media screen and (min-width: 768px) {
-    margin-left: 40px;
+    font-size: 18px;
   }
 }
-.img-is-empty {
+.shopping-list-empty-img {
   display: block;
   height: 198px;
   margin-top: 14px;
   @media screen and (min-width: 768px) {
     height: 241px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
   }
+}
+.shop-list {
+  margin-top: 40px;
+}
+.shopping-list-card {
+  background: #ffffff;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 335px;
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 996px;
+  }
+}
+.shopping-list-card-flex {
+  display: flex;
+  margin: 14px;
+}
+.list-card-img {
+  margin-right: 14px;
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
+  @media screen and (min-width: 768px) {
+    margin-right: 24px;
+    width: 116px;
+    height: 165px;
+  }
+}
+
+.list-card-title {
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #111111;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+.list-card-subtitle {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #b4afaf;
+}
+.list-card-text {
+  width: 193px;
+  height: 68px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+
+  @media screen and (min-width: 768px) {
+    width: 508px;
+    margin-top: 14px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 808px;
+  }
+}
+.list-card-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  @media screen and (min-width: 768px) {
+    margin-top: 35px;
+  }
+}
+.list-card-contributor {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  color: #b4afaf;
+}
+.list-card-amazon-url {
+  width: 32px;
+  height: 11px;
+  display: inline-block;
+  background-color: green;
+}
+.list-card-book-url {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-color: green;
 }
