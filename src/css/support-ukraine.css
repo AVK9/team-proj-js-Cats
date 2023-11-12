@@ -71,3 +71,9 @@
         margin-left: 159px;
       }
     }
+
+    .scroll {
+      list-style-type: none;
+  overflow-y: scroll;
+  width: 340px;
+    }

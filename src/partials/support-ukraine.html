@@ -13,7 +13,7 @@
                     />
 </div>
 <div class="image">
-<ul>
+<ul class="scroll">
     <li class="spisok"><img
         srcset="
           ./img/support-ukraine/1-1x.png 1x,
@@ -115,5 +115,10 @@
     width="32"
     height="32" 
   />
-    </button>
+  </button>
+  <script>
+    $(document).ready(function(){
+        $(".btn").dropdown();
+    });
+    </script>
 </div>
