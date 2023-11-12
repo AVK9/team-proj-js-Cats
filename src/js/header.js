@@ -38,26 +38,6 @@ themeSwitch.addEventListener('change', () => {
   mobileCloseDark.classList.toggle('mobile-close-icon-dark', isDarkMode);
 });
 
-// themeSwitch.addEventListener('change', () => {
-//   document.body.classList.toggle('dark-mode', themeSwitch.checked);
-//   header.classList.toggle('header-dark-mode', themeSwitch.checked);
-//   shoppingListLink.classList.toggle(
-//     'dark-mode-header-link',
-//     themeSwitch.checked
-//   );
-//   shoppingBagDarkMode.classList.toggle(
-//     'shopping-bag-dark',
-//     themeSwitch.checked
-//   );
-
-//   logoDarkMode.classList.toggle('logo-dark-mode', themeSwitch.checked);
-//   burgerDarkMode.classList.toggle('burger-menu-icon-dark', themeSwitch.checked);
-//   mobileCloseDark.classList.toggle(
-//     'mobile-close-icon-dark',
-//     themeSwitch.checked
-//   );
-// });
-
 // Mobile menu
 
 const openModalBtn = document.querySelector('.open-menu-btn');
@@ -79,7 +59,8 @@ closeMenuBtn.onclick = function () {
 
 // Button > 768  fix
 function checkWidth() {
-  var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  const viewportWidth =
+    window.innerWidth || document.documentElement.clientWidth;
   if (viewportWidth >= 768) {
     document.querySelector('.open-menu-btn').style.display = 'none';
   } else {
@@ -89,3 +70,35 @@ function checkWidth() {
 
 window.onload = checkWidth;
 window.onresize = checkWidth;
+
+// Header color changer
+
+function updateClassBasedOnPageShopping() {
+  const myElement = document.querySelector('.a-shoppinglist');
+  const secondElem = document.querySelector('.shopping-mobile');
+
+  if (window.location.href.indexOf('shoppinglist.html') > -1) {
+    myElement.classList.add('a-shopping-active');
+    secondElem.classList.add('a-shopping-active');
+  } else {
+    myElement.classList.remove('a-shopping-active');
+    secondElem.classList.remove('a-shopping-active');
+  }
+}
+
+updateClassBasedOnPageShopping();
+
+function updateClassBasedOnPageHome() {
+  const myElement = document.querySelector('.a-home');
+  const secondElem = document.querySelector('.home-mobile');
+
+  if (window.location.href.indexOf('index.html') > -1) {
+    myElement.classList.add('a-home-active');
+    secondElem.classList.add('a-home-active');
+  } else {
+    myElement.classList.remove('a-home-active');
+    secondElem.classList.remove('a-home-active');
+  }
+}
+
+updateClassBasedOnPageHome();
