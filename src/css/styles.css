@@ -15,6 +15,7 @@
 @import url('./fonts.css');
 @import url('./shopping-list.css');
 @import url('./main-content-page.css');
+@import url('./authorization.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
