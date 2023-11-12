@@ -3,9 +3,9 @@ import listCategory from './axios'
 // import allBooksBackend from './axios'
 
  const mainContentPage = document.querySelector('.main-content-page');
-const numberBlocksPage = 2;
+const numberBlocksPage = 4;
 
-const catList = document.querySelector('.categoriesList');
+const catList = document.querySelector('.categories-list');
 listCategory()
     .then(resp => {
         markupCatList(resp);
@@ -21,7 +21,7 @@ function markupCatList(respArr) {
     ) => `
        <li class="categoryItem">${list_name}</li>
        `).join("");
-    const itemFirstEl = '<li class="categoryItem">All categories</li>';
+    const itemFirstEl = '<li class="categoryItem category-item-firstelm">All categories</li>';
     catList.innerHTML = itemFirstEl + categoriesList;
 }
 ////////////////////////////////////////////////////////////
@@ -66,26 +66,26 @@ function markupCatList(respArr) {
 //         book_image,
 //         title,}
 //    ) => `
-//       <div class="partCardsListItem photo-card" id="${_id}" >
-//          <img class="imgBestSellersItem images-prev" src="${book_image}" alt="${title}" width ='180'>
-//          <p class="nameBestSellersItem info-item-title">${title}</p>
-//          <p class="authorBestSellersItem info-item-author">${author}</p>
-//       </div>
+//       <li class="part-cards-list-item" id="${_id}" >
+//          <img class="images-prev" src="${book_image}" alt="${title}" width ='180'>
+//          <p class="info-item-title">${title}</p>
+//          <p class="info-item-author">${author}</p>
+//       </li>
 //        `).join("");
     
 //       partBoxAllBooks =
-//       ` <div class="bestSellersPart">
-//               <p class="bestSellersPartName">${categoryName}</p>
-//                  <div class="bestSellersPartCards">
-//                    <div class="partCardsList main-content-list">
-//                    ${pageMarkupAllBooks}
-//                    </div>
-//                  </div>
-//           </div>
-//           <button class="btnBestSellersSeeMore" category = "${categoryName}">See More</button>
+//       `<div class="best-sellers-group">
+//       <div class="bestellers-part">
+//               <p class="bestsellers-part-name">${categoryName}</p>
+//               <ul class="part-cards-list">
+//                   ${pageMarkupAllBooks}
+//               </ul>
+//           </div></div>
+//           <button class="btn-best-seemore" category = "${categoryName}">See More</button>
 //       `
 //         pageAllBooks += partBoxAllBooks;
-//     }
+//   }
+//   const allPartToBox= `<div class="all-part-to-box">${pageAllBooks}</div>`
 //     // refs.catPage.insertAdjacentHTML('beforeend', headPage + pageAllBooks);
-//     mainContentPage.innerHTML = headPage + pageAllBooks;
+//     mainContentPage.innerHTML = headPage + allPartToBox;
 // }
