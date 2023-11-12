@@ -31,12 +31,14 @@ if (e.target.textContent === selectedCategory) {
     return;
   } if (e.currentTarget === e.target) {
     return;
-  } if (catListItem.firstChild === e.target) {
+  }
+  if (catListItem.firstChild === e.target) {
     
-    getSelectedCategory('Audio Nonfiction')
-    //Cюда вставить функцию H1
+    // getSelectedCategory('Audio Nonfiction')
+    // Cюда вставить функцию H1
     // mainContentPage.innerHTML = 'Audio Nonfiction';
-  }else {
+  }
+  else {
   selectedCategory = e.target.textContent
   getSelectedCategory(selectedCategory);
 }

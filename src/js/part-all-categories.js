@@ -19,14 +19,14 @@ listCategory()
 function markupCatList(respArr) {
     const categoriesList = respArr.map(({ list_name }
     ) => `
-       <li class="categoryItem">${list_name}</li>
+       <li class="category-item">${list_name}</li>
        `).join("");
-    const itemFirstEl = '<li class="categoryItem category-item-firstelm">All categories</li>';
+    const itemFirstEl = '<li class="category-item category-item-firstelm">All categories</li>';
     catList.innerHTML = itemFirstEl + categoriesList;
 }
 ////////////////////////////////////////////////////////////
 
-//  async function allBooksBackend() {
+// async function allBooksBackend() {
 //     const BASE_URL = 'https://books-backend.p.goit.global/books/top-books';
 //     return await fetch(`${BASE_URL}`)
 //        .then((resp) => {
@@ -89,3 +89,27 @@ function markupCatList(respArr) {
 //     // refs.catPage.insertAdjacentHTML('beforeend', headPage + pageAllBooks);
 //     mainContentPage.innerHTML = headPage + allPartToBox;
 // }
+
+
+// //----------------
+// catList.addEventListener('click', onFirstSwitch);
+// function onFirstSwitch(e) {
+//   // selectedCategory = e.target.textContent;
+//   // console.log(catListItem.firstChild);
+// if (e.currentTarget === e.target) {
+//     return;
+//   } if (catList.firstChild === e.target) {
+    
+//     allBooksBackend()
+//     //Cюда вставить функцию H1
+//     // mainContentPage.innerHTML = 'Audio Nonfiction';
+//   }
+// //   else {
+// //   selectedCategory = e.target.textContent
+// //   getSelectedCategory(selectedCategory);
+// }
+// // console.log(e.currentTarget);
+// //   console.log(e.target);
+    
+    
+// // };
