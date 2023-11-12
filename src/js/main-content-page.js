@@ -8,18 +8,18 @@ let selectedCategory = '';
 const catListItem = document.querySelector('.categories-list');
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
- function temp() {
-   getSelectedCategory('Audio Nonfiction');
-};temp();
- function  temp2() {
-  const headmainh = `<h1 class="head-main-h">Best Sellers
-  <span class="head-main-h head-main-hdecor">
-  Books
-  </span>
-   </h1>`;
-  mainContentPage.insertAdjacentHTML('afterbegin', headmainh)
-};
-setTimeout(temp2, 600)
+//  function temp() {
+//    getSelectedCategory('Audio Nonfiction');
+// };temp();
+//  function  temp2() {
+//   const headmainh = `<h1 class="head-main-h">Best Sellers
+//   <span class="head-main-h head-main-hdecor">
+//   Books
+//   </span>
+//    </h1>`;
+//   mainContentPage.insertAdjacentHTML('afterbegin', headmainh)
+// };
+// setTimeout(temp2, 600)
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -34,6 +34,7 @@ if (e.target.textContent === selectedCategory) {
   } if (catListItem.firstChild === e.target) {
     
     getSelectedCategory('Audio Nonfiction')
+    //Cюда вставить функцию H1
     // mainContentPage.innerHTML = 'Audio Nonfiction';
   }else {
   selectedCategory = e.target.textContent
