@@ -5,7 +5,7 @@ const CATSELECT = '/books/category?category=';
 
  const mainContentPage = document.querySelector('.main-content-page');
 let selectedCategory = '';
-const catListItem = document.querySelector('.categoriesList');
+const catListItem = document.querySelector('.categories-list');
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  function temp() {
@@ -90,8 +90,8 @@ headMaker (selectedCategory)
         _id,
     }
    ) => `
-       <li class="photo-card" id="${_id}">
-             <img class="images-prev" src="${book_image}"
+       <li class="part-cards-list-itemcat" id="${_id}">
+             <img class="images-prevcat" src="${book_image}"
               alt="${title}" width ='180' loading="lazy" />
                 <div class="info">
                    <p class="info-item-title"><b>${title}</b></p>
@@ -100,7 +100,7 @@ headMaker (selectedCategory)
        </li>
        `).join("");
      const contentPageCat = `${headMaidCss}
-<ul class="main-content-list">
+<ul class="main-content-listcat">
     ${markupSelectedCategory}
 </ul>`;
    mainContentPage.innerHTML = contentPageCat;

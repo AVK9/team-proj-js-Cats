@@ -9,12 +9,12 @@
 @import url('./header.css');
 @import url('./part-all-categories.css');
 @import url('./support-ukraine.css');
-@import url('./main-content-page.css');
 @import url('./part-bestseller.css');
 @import url('./popup-menu.css');
 @import url('./base.css');
 @import url('./fonts.css');
 @import url('./shopping-list.css');
+@import url('./main-content-page.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
@@ -28,7 +28,6 @@
   --yellow-color: rgba(234, 198, 69, 1);
   --white-background: rgba(255, 255, 255, 1);
   --background: #F6F6F6;
-
 
   --color-text: rgba(17, 17, 17, 1)
   --color-text-dack-thema: rgba(255, 255, 255, 1)

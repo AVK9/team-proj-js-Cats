@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 main {
   flex-grow: 1;
@@ -38,7 +38,7 @@ main {
 /* Mobile base styles */
 
 .container {
-  /* min-width: 320px; */
+  min-width: 320px;
   max-width: 375px;
 
   margin-left: auto;
