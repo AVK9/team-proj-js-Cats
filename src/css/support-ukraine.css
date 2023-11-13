@@ -1,1 +1,79 @@
 
+.pharag {
+  font: DM Sans;
+  weight: 700;
+  size: 22px;
+  line-height: 24px;
+  letter-spacing: -4%;
+  color: #FFFFFF;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .pharag {
+      size: 24px;
+      line-height: 28px;
+    }
+  }
+  
+  .name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 193px;
+      height: 32px;
+      gap: 12px;
+      margin-left: 40px;
+      margin-top: 24px;
+    }
+  
+    @media only screen and (min-width: 768px) {
+      .name {
+        min-width: 208px;
+      }
+    }
+  
+    .trizyb {
+      align-items: right;
+    }
+  
+    .spisok {
+      margin-bottom: 1.1em;
+    }
+
+    .image { 
+    display: flex;
+    min-width: 159px;
+    min-height: 292px;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 40px;
+    }
+  
+    .btn {
+      display: flex;
+      width: 32px;
+      height: 32px;
+      margin-left: 151.5px;
+      rotation: -90°;
+    }
+  
+    @media only screen and (min-width: 768px) {
+      .btn {
+        width: 38px;
+        height: 38px;
+        margin-left: 151.5px;
+      }
+    }
+    @media only screen and (min-width: 1440px) {
+      .btn {
+        width: 38px;
+        height: 38px;
+        margin-left: 159px;
+      }
+    }
+
+    .scroll {
+      list-style-type: none;
+  overflow-y: scroll;
+  width: 340px;
+    }

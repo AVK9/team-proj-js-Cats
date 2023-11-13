@@ -1,0 +1,18 @@
+/* .all-part-to-box {
+   border: 2px solid red;
+   display: block } 
+.bestellers-part {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: ((100% - 96px) / 5);
+    background-color: chartreuse; 
+}
+.images-prev {
+  display: block;
+}
+.part-cards-list {
+  border: 2px solid black; */
+/* display: flex;
+   flex-wrap: wrap; */
+/* flex-basis: ((100% - 96px) / 5);
+}   */
