@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 const BASEURL = 'https://books-backend.p.goit.global';
 const CATSELECT = '/books/category?category=';
 
- const mainContentPage = document.querySelector('.main-content-page');
+const mainContentPage = document.querySelector('.main-content-page');
 let selectedCategory = '';
 const catListItem = document.querySelector('.categories-list');
 
@@ -27,11 +27,19 @@ catListItem.addEventListener('click', onCategoriesSwitch);
 function onCategoriesSwitch(e) {
   // selectedCategory = e.target.textContent;
   // console.log(catListItem.firstChild);
-if (e.target.textContent === selectedCategory) {
-    return;
-  } if (e.currentTarget === e.target) {
+  if (e.target.textContent === selectedCategory) {
     return;
   }
+
+  const activeCategory = document.querySelector('.category-active');
+  if (activeCategory) {
+    activeCategory.classList.remove('category-active');
+  }
+  
+  if (e.currentTarget === e.target) {
+    return;
+  }
+
   if (catListItem.firstChild === e.target) {
     
     // getSelectedCategory('Audio Nonfiction')
@@ -39,13 +47,15 @@ if (e.target.textContent === selectedCategory) {
     // mainContentPage.innerHTML = 'Audio Nonfiction';
   }
   else {
-  selectedCategory = e.target.textContent
-  getSelectedCategory(selectedCategory);
-}
-// console.log(e.currentTarget);
-//   console.log(e.target);
-    
-    
+    selectedCategory = e.target.textContent
+
+    e.target.classList.add('category-active');
+
+    getSelectedCategory(selectedCategory);
+  }
+
+  // console.log(e.currentTarget);
+  //   console.log(e.target);
 };
 
 async function getSelectedCategory(selectedCategory) {
