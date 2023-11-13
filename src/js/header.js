@@ -8,7 +8,7 @@ const logoDarkMode = document.querySelector('.header-logo-2');
 const burgerDarkMode = document.querySelector('.burger-menu-icon');
 const mobileCloseDark = document.querySelector('.mobile-close-icon');
 const categoryDarkText = document.querySelector('.categories-list');
-const categoriesChildren = categoryDarkText.children;
+// const categoriesChildren = categoryDarkText.children;
 
 function setThemeFromLocalStorage() {
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
