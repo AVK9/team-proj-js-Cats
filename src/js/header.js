@@ -57,6 +57,24 @@ closeMenuBtn.onclick = function () {
   document.body.style.overflow = 'auto';
 };
 
+// const openModalBtn = document.querySelector('.open-menu-btn');
+// const mobileMenu = document.querySelector('.menu-data-modile');
+// const closeMenuBtn = document.querySelector('.close-menu-btn');
+
+// openModalBtn.onclick = function () {
+//   mobileMenu.classList.add('show');
+//   openModalBtn.style.display = 'none';
+//   closeMenuBtn.style.display = 'block';
+//   document.body.style.overflow = 'hidden';
+// };
+
+// closeMenuBtn.onclick = function () {
+//   mobileMenu.classList.remove('show');
+//   openModalBtn.style.display = 'block';
+//   closeMenuBtn.style.display = 'none';
+//   document.body.style.overflow = 'auto';
+// };
+
 // Button > 768  fix
 function checkWidth() {
   const viewportWidth =
