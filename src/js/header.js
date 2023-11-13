@@ -7,6 +7,8 @@ const shoppingBagDarkMode = document.querySelector('.shopping-bag');
 const logoDarkMode = document.querySelector('.header-logo-2');
 const burgerDarkMode = document.querySelector('.burger-menu-icon');
 const mobileCloseDark = document.querySelector('.mobile-close-icon');
+const categoryDarkText = document.querySelector('.categories-list');
+const categoriesChildren = categoryDarkText.children;
 
 function setThemeFromLocalStorage() {
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -18,6 +20,8 @@ function setThemeFromLocalStorage() {
   logoDarkMode.classList.toggle('logo-dark-mode', isDarkMode);
   burgerDarkMode.classList.toggle('burger-menu-icon-dark', isDarkMode);
   mobileCloseDark.classList.toggle('mobile-close-icon-dark', isDarkMode);
+  categoryDarkText.classList.toggle('categories-list-dark-mode', isDarkMode);
+  // categoriesChildren.classList.toggle('category-dark-hover', isDarkMode);
 
   themeSwitch.checked = isDarkMode;
 }
@@ -36,6 +40,8 @@ themeSwitch.addEventListener('change', () => {
   logoDarkMode.classList.toggle('logo-dark-mode', isDarkMode);
   burgerDarkMode.classList.toggle('burger-menu-icon-dark', isDarkMode);
   mobileCloseDark.classList.toggle('mobile-close-icon-dark', isDarkMode);
+  categoryDarkText.classList.toggle('categories-list-dark-mode', isDarkMode);
+  // categoriesChildren.classList.toggle('category-dark-hover', isDarkMode);
 });
 
 // Mobile menu
@@ -56,24 +62,6 @@ closeMenuBtn.onclick = function () {
   closeMenuBtn.style.display = 'none';
   document.body.style.overflow = 'auto';
 };
-
-// const openModalBtn = document.querySelector('.open-menu-btn');
-// const mobileMenu = document.querySelector('.menu-data-modile');
-// const closeMenuBtn = document.querySelector('.close-menu-btn');
-
-// openModalBtn.onclick = function () {
-//   mobileMenu.classList.add('show');
-//   openModalBtn.style.display = 'none';
-//   closeMenuBtn.style.display = 'block';
-//   document.body.style.overflow = 'hidden';
-// };
-
-// closeMenuBtn.onclick = function () {
-//   mobileMenu.classList.remove('show');
-//   openModalBtn.style.display = 'block';
-//   closeMenuBtn.style.display = 'none';
-//   document.body.style.overflow = 'auto';
-// };
 
 // Button > 768  fix
 function checkWidth() {

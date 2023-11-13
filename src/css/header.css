@@ -349,3 +349,15 @@ input:checked + .burger-menu-icon {
   border-radius: 36px;
   font-weight: 700;
 }
+
+.categories-list {
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.categories-list-dark-mode {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* .category-dark-hover:hover {
+  color: rgba(234, 198, 69, 1);
+} */
