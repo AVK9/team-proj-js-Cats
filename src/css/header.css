@@ -7,7 +7,6 @@
   border: 1.5px solid #111;
   transition: background-color 0.5s;
   position: relative;
-  /* z-index: 10; */
 }
 
 @media only screen and (min-width: 768px) {
@@ -229,7 +228,7 @@ input:checked + .burger-menu-icon {
 
 /* Mobile-menu */
 
-.menu-data-modile {
+/* .menu-data-modile {
   position: absolute;
   display: none;
   background-image: url(../img/global/books-mobile-bg-2x.png),
@@ -247,7 +246,38 @@ input:checked + .burger-menu-icon {
   height: 100vh;
 
   z-index: 10;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} */
+
+.menu-data-modile {
+  position: absolute;
+  display: none;
+  background-image: url(../img/global/books-mobile-bg-2x.png),
+    radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #fff 100%
+    );
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  top: 69px;
+  left: -1px;
+
+  width: 101%;
+  height: 100vh;
+  z-index: 10;
+
+  /* opacity: 0;
+  transition: opacity 400ms ease; */
 }
+
+/* .menu-data-modile.show {
+  display: block;
+  opacity: 1;
+} */
 
 .menu-mobile-content {
   display: flex;
