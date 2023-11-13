@@ -1,4 +1,4 @@
-import { supportUkraineItems } from './array-support-ukraine';
+import { supportUkraineItems } from './list-support-ukraine';
 
 const supportListEl = document.querySelector('.js-support_list');
 const supportBtnEl = document.querySelector('.js-support_btn');
@@ -43,7 +43,6 @@ function findEndIndex(value) {
   }
 }
 
-// при проходженні через брейкпойнти
 let currentRenderWidth = window.innerWidth;
 addEventListener('resize', () => {
   if (window.innerWidth > 767 && currentRenderWidth < 768)  {
