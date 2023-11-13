@@ -43,6 +43,13 @@
   transition: 50ms;
 }
 
+.category-active {
+  color: var(--violet-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: 50ms;
+}
+
 @media only screen and (min-width: 768px) {
   .category-item {
     font-size: 16px;
@@ -52,7 +59,6 @@
   }
 }
 @media only screen and (min-width: 768px) {
-
   .category-item:hover {
     color: var(--violet-color);
     text-transform: uppercase;
@@ -71,4 +77,3 @@
     gap: 32px;
   }
 }
-
