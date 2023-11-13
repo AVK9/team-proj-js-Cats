@@ -86,8 +86,8 @@ const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
    ) => `
        <div class="photo-card" id="${_id}">
        <button class="btn-close-infobook">X</button>
-             <img class="images" src="${book_image}"
-              alt="${title}" loading="lazy" />
+             <img class="images-photo" src="${book_image}"
+              alt="${title}" loading="lazy" hight="281" />
                 <div class="info">
                    <p class="info-title"><b>${title}</b></p>
                    <p class="info-author"><b>${author}</b></p>
