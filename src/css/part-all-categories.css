@@ -18,11 +18,17 @@
   background-color: #e0e0e0;
   border-radius: 12px;
   width: 8px;
-  height: 14px;
+  height: 114px;
 }
 @media only screen and (min-width: 768px) {
   .all-categories-box {
     overflow-y: scroll;
+  }
+  .all-categories-box::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    width: 8px;
+    height: 167px;
   }
 }
 
@@ -41,6 +47,7 @@
   text-transform: uppercase;
   font-weight: 700;
   transition: 50ms;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -58,6 +65,7 @@
     text-transform: uppercase;
     font-weight: 700;
     transition: 50ms;
+
   }
 }
 
@@ -71,4 +79,3 @@
     gap: 32px;
   }
 }
-
