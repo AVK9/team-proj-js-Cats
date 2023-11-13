@@ -1,5 +1,6 @@
 const empty = document.querySelector('.shopping-list-empty');
 const list = document.querySelector('.js-shop-list');
+
 console.log('object');
 const LS_KEY = 'shopping-list';
 const elements = [
@@ -49,27 +50,41 @@ function createMarkup(arr) {
         description,
         publisher,
         title,
-      }) =>
-        `<li class="shopping-list-card">
-          <div class="shopping-list-card-flex"><img class="list-card-img" src="${book_image}" alt="${author}">
-            <div>
-              <h3 class="list-card-title">${title}</h3>
-              <p class="list-card-subtitle">${list_name}</p>
-              <p class="list-card-text">${description}</p>
-              <div class="list-card-flex">
-                <p class="list-card-contributor">${contributor}</p>
+      }) => `<li class="shopping-list-card">
+              <div class="shopping-list-card-flex"><img class="list-card-img" src="${book_image}" alt="${author}">
                 <div>
-                  <a class="list-card-amazon-url" href="${amazon_product_url}">
-                    
-                  </a>
-                  <a class="list-card-book-url" href="${book_uri}">
-                    
-                  </a>
+                  <div class="shop-trash-flex">
+                    <div>
+                      <h3 class="list-card-title">${title}</h3>
+                      <p class="list-card-subtitle">${list_name}</p>
+                    </div>
+                    <div class="shop-trash-bg js-trash">
+                      <svg class="shop-trash">
+                        <use href="./img/global/icons.svg#trash"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="shop-text-flex">
+                    <p class="list-card-text">${description}</p>
+                    <div class="list-card-flex">
+                      <p class="list-card-contributor">${contributor}</p>
+                      <div class="list-card-icon-flex">
+                        <a class="list-card-amazon-url" href="${amazon_product_url}"></a>
+                        <a class="list-card-book-url" href="${book_uri}"></a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </li>`
+            </li>`
     )
     .join('');
+}
+
+const trash = document.querySelector('.js-trash');
+
+trash.addEventListener('click', handlerClick);
+
+function handlerClick(e) {
+  console.dir(e);
 }
