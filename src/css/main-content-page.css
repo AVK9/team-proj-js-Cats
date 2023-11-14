@@ -57,7 +57,7 @@
   .box-support-ukraine,
   .allCategoriesBox {
     width: 356px;
-    height: 472 px;
+    height: 472px;
     margin-bottom: 86px;
   }
 }
@@ -83,7 +83,7 @@
   line-height: 38px;
   letter-spacing: -1.28px;
 
-  color: --black-color;
+  color: rgba(17, 17, 17, 1);
   margin-bottom: 40px;
 }
 
