@@ -64,7 +64,7 @@
   margin-top: 40px;
 }
 .shopping-list-card {
-  background: #ffffff;
+  /* background: #ffffff; */
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   margin-top: 20px;
@@ -106,7 +106,7 @@
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
-  color: #111111;
+  /* color: #111111; */
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
