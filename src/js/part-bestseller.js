@@ -1,25 +1,49 @@
- const mainContentPage = document.querySelector('.main-content-page');
- const numberBlocksPage = 4;
+import axios from "axios";
+import Notiflix from 'notiflix';
+const BASEURL = 'https://books-backend.p.goit.global';
+const ALLCAT = '/books/top-books';
 
- async function allBooksBackend() {
-    const BASE_URL = 'https://books-backend.p.goit.global/books/top-books';
-    return await fetch(`${BASE_URL}`)
-       .then((resp) => {
-    if (!resp.ok) {
-      throw new Error(resp.statusText);
-    }
-    return resp.json();
-  });
+const mainContentPage = document.querySelector('.main-content-page');
+const numberBlocksPage = 4;
+ 
+ async function getAllBestCategory() {
+  try {
+    const allBestCategory = await axios.get(`${BASEURL}${ALLCAT}`);
+    // console.log(AllBestCategory);
+    return allBestCategory.data;
+  } catch (error) {
+    console.error(error);
+    Notiflix.Notify.failure('Error');
+  }
 }
-//---------------------------
 
-
- allBooksBackend()
-    .then((data) => {
-    //   console.log(data);
-       createPageAllBooks(data);
+ getAllBestCategory()
+  .then(data => {
+    console.log(data);
+    createPageAllBooks(data);
   })
-    .catch((err) => console.log(err));
+  .catch(err => console.log(err));
+
+
+//  async function allBooksBackend() {
+//     const BASE_URL = 'https://books-backend.p.goit.global/books/top-books';
+//     return await fetch(`${BASE_URL}`)
+//        .then((resp) => {
+//     if (!resp.ok) {
+//       throw new Error(resp.statusText);
+//     }
+//     return resp.json();
+//   });
+// }
+// //---------------------------
+
+
+//  allBooksBackend()
+//     .then((data) => {
+//       console.log(data);
+//        createPageAllBooks(data);
+//   })
+//     .catch((err) => console.log(err));
         
 
     
