@@ -17,6 +17,7 @@
 @import url('./main-content-page.css');
 @import url('./authorization.css');
 @import url('./back-to-top.css');
+@import url('./su.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
