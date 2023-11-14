@@ -91,6 +91,7 @@
   transform: translateY(195px);
   /* z-index: 1000; */
   margin-left: 280px;
+  color: transparent;
   /* display: none; */
 }
 .is-hidden {

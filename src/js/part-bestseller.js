@@ -1,10 +1,7 @@
-
  const mainContentPage = document.querySelector('.main-content-page');
  const numberBlocksPage = 4;
 
-
-
-async function allBooksBackend() {
+ async function allBooksBackend() {
     const BASE_URL = 'https://books-backend.p.goit.global/books/top-books';
     return await fetch(`${BASE_URL}`)
        .then((resp) => {
@@ -15,6 +12,7 @@ async function allBooksBackend() {
   });
 }
 //---------------------------
+
 
 await allBooksBackend()
     .then((data) => {
