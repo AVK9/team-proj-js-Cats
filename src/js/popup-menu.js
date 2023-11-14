@@ -7,15 +7,15 @@ const refs = {
     partCardsPage: document.querySelector('.partCardsList'),
     btnSeeMore: document.querySelector('.btnBestSellersSeeMore'),
     cardsBookSmall: document.querySelector('.photo-card'),
-    shoppingList: document.querySelector('.shoppingList'),
-    btnAddtoShList: document.querySelector('.btnAddtoCard'),
-    btnRemoveShList: document.querySelector('.btnRemoveCard'),
+//   shoppingList: document.querySelector('.js-shop-list'),
 
 
 
 
 
-
+  
+    btnAddtoShList: document.querySelector('.btn-addto-card'),
+    btnRemoveShList: document.querySelector('.btn-remove-card'),
 
     bdropPopup: document.querySelector('.backdrop-popup-menu'),
     backdropBlock: document.querySelector('.wrapper'),
@@ -93,8 +93,8 @@ const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
                    <p class="info-author"><b>${author}</b></p>
                    <p class="info-buy_links"><b>${infoBuyLinks}</b></p>
                    <p class="info-description">${description}</p>
-                   <button class="btnAddtoCard">Add to shopping list</button>
-                   <button class="btnRemoveCard hidden">Remove from the shopping list</button>
+                   <button class="btn-addto-card">Add to shopping list</button>
+                   <button class="btn-remove-card hidden">Remove from the shopping list</button>
                 </div>
        </div>
        `).join("");
@@ -112,24 +112,25 @@ const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
 refs.bookPage.addEventListener('click', onClickBookInfo);
 function onClickBookInfo(e) { 
    
-
-
-
-
-
     
-    const btnAddtoCard = e.target.closest(".btnAddtoCard")
-    const btnRemoveCard = e.target.closest(".btnRemoveCard")
+    const btnAddtoCard = e.target.closest(".btn-addto-card")
+    const btnRemoveCard = e.target.closest(".btn-remove-card")
     const btnCloseBookPage = e.target.closest(".btn-close-infobook")
     if (btnAddtoCard) {
-        console.log('btnAddtoCard');
-        console.log(refs.btnRemoveShList);
-        // refs.btnRemoveShList.classList.remove('hidden');
-        //  refs.btnAddtoCard.classList.add('hidden')
+          console.log('btnAddtoCard');
+              refs.btnAddtoCard.classList.add('hidden') 
+
+
+
+
+
+      //   console.log(refs.btnRemoveShList);
+      //   refs.btnRemoveShList.classList.remove('hidden');
+    
 
     } if (btnRemoveCard) {
-        // refs.btnAddtoCard.classList.remove('hidden')
-        // refs.btnRemoveCard.classList.add('hidden')
+        refs.btnAddtoCard.classList.remove('hidden')
+        refs.btnRemoveCard.classList.add('hidden')
     console.log('btnRemoveCard');
       } if (btnCloseBookPage) {
           refs.backdropBlock.classList.remove('backdrop-block')
