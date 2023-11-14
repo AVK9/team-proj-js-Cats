@@ -292,14 +292,37 @@ const shopArr = lsAdd(LS_KEY, elements);
 
 list.innerHTML = createMarkup(shopArr);
 
-const test = document.querySelector('.js-test');
+const test = document.querySelectorAll('.js-test');
 
-for (let i = 0; i < test.length; i += 1) {
-  test[i].addEventListener('click', handlerClick);
+if (test) {
+  for (let i = 0; i < test.length; i += 1) {
+    test[i].addEventListener('click', handlerClick);
+  }
 }
 
-function createMarkup(arr) {
-  return arr
+const pagination = document.querySelector('.pagination');
+pagination.classList.add('hidden-pagination');
+
+const prev = document.querySelector('.prev');
+
+const next = document.querySelector('.next');
+
+const doublePrev = document.querySelector('.double-prev');
+
+const doubleNext = document.querySelector('.double-next');
+
+const buttonsNumbers = document.querySelector('.buttons-numbers');
+
+const perPage = 4;
+let currentPage = 1;
+
+function createMarkup(arr, page, perPage) {
+  const start = (page - 1) * perPage;
+  const end = start + perPage;
+  const itemsRender = arr.slice(start, end);
+
+
+  return itemsRender
     .map(
       ({
         _id,
@@ -342,6 +365,147 @@ function createMarkup(arr) {
     )
     .join('');
 }
+
+function renderPage(arr, page, perPage) {
+  const markup = createMarkup(arr, page, perPage);
+  list.innerHTML = markup;
+
+  if (arr.length <= perPage) {
+    pagination.classList.add("hidden-pagination");
+  } else {
+    pagination.classList.remove("hidden-pagination");
+  }
+}
+
+function renderButtonsPagination(arr) {
+  const totalPages = Math.ceil(arr.length / perPage);
+
+  buttonsNumbers.innerHTML = '';
+
+  for (let i = 1; i <= totalPages; i += 1) {
+    const button = document.createElement('button');
+    button.classList.add('bth-num');
+    button.textContent = i;
+    buttonsNumbers.appendChild(button);
+
+    if (i === currentPage) {
+      button.classList.add('bth-active');
+    }
+
+    button.addEventListener('click', () => {
+      currentPage = i;
+      renderPage(arr, currentPage, perPage);
+      updateButtonsVisibility();
+      updateActiveClass();
+      
+      if (currentPage === 1) {
+        prev.disabled = true;
+        doublePrev.disabled = true;
+      } else {
+        prev.disabled = false;
+        doublePrev.disabled = false;
+      }
+
+      if (currentPage === totalPages) {
+          next.disabled = true;
+          doubleNext.disabled = true;
+      } else {
+          next.disabled = false;
+          doubleNext.disabled = false;
+      }
+    });
+  }
+
+  updateButtonsVisibility();
+  updateActiveClass();
+}
+
+function updateActiveClass() {
+  const allButtons = document.querySelectorAll('.bth-num');
+
+  allButtons.forEach((button, index) => {
+    const isActivePage = index + 1 === currentPage;
+    if (isActivePage) {
+      button.classList.add('bth-active');
+    } else {
+      button.classList.remove('bth-active');
+    }
+  });
+}
+
+function updateButtonsVisibility() {
+  const allButtons = document.querySelectorAll('.bth-num');
+
+  allButtons.forEach((button, index) => {
+    if (index + 1 === currentPage || index + 2 === currentPage || index === currentPage) {
+      button.classList.remove("hidden-pagination");
+    } else {
+      button.classList.add("hidden-pagination");
+    }
+  });
+};
+
+renderPage(elements, currentPage, perPage);
+renderButtonsPagination(elements);
+
+prev.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage -= 1;
+    renderPage(elements, currentPage, perPage);
+    updateButtonsVisibility();
+    updateActiveClass();
+  } else {
+    prev.disabled = true;
+    doublePrev.disabled = true;
+  }
+
+  next.disabled = false;
+  doubleNext.disabled = false;
+});
+
+next.addEventListener("click", () => {
+  const totalPages = Math.ceil(elements.length / perPage);
+  if (currentPage < totalPages) {
+    currentPage += 1;
+    renderPage(elements, currentPage, perPage);
+    updateButtonsVisibility();
+    updateActiveClass();
+  } else {
+    next.disabled = true;
+    doubleNext.disabled = true;
+  }
+
+  prev.disabled = false;
+  doublePrev.disabled = false;
+});
+
+doublePrev.addEventListener('click', () => {
+  currentPage = 1;
+  renderPage(elements, currentPage, perPage);
+  updateButtonsVisibility();
+  updateActiveClass();
+
+  prev.disabled = true;
+  next.disabled = false;
+
+  doublePrev.disabled = true;
+  doubleNext.disabled = false;
+});
+
+doubleNext.addEventListener('click', () => {
+  const totalPages = Math.ceil(elements.length / perPage);
+  currentPage = totalPages;
+  renderPage(elements, currentPage, perPage);
+  updateButtonsVisibility();
+  updateActiveClass();
+
+  next.disabled = true;
+  doubleNext.disabled = true;
+
+  prev.disabled = false;
+  doublePrev.disabled = false;
+});
+
 function handlerClick(e) {
   if (e.target === e.currentTarget) {
     return;
