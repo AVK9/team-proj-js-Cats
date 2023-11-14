@@ -1,5 +1,8 @@
 .shop-main-flex {
-  display: flex;
+  display: block;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
 }
 .container-shopping-list {
   @media screen and (min-width: 1440px) {
@@ -213,4 +216,14 @@
   background-image: url('../img/shopping/book.png');
   mix-blend-mode: luminosity;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+.shop-dark-one {
+  background-color: var(--black-color);
+  color: var(--color-text-dack-thema);
+}
+.shop-dark-two {
+  color: #b3afaf;
+}
+.shop-dark-three {
+  color: #b4afaf;
 }
