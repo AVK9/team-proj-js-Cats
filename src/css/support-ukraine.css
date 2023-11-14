@@ -67,7 +67,7 @@
     
     .support__link {
       display: flex;
-      align-items: center;
+      align-items: left;
       height: 32px;
     }
     
