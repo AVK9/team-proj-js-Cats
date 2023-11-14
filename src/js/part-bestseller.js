@@ -1,26 +1,4 @@
-
-//  const mainContentPage = document.querySelector('.main-content-page');
-//  const numberBlocksPage = 4;
-
-// async function allBooksBackend() {
-//     const BASE_URL = 'https://books-backend.p.goit.global/books/top-books';
-//     return await fetch(`${BASE_URL}`)
-//        .then((resp) => {
-//     if (!resp.ok) {
-//       throw new Error(resp.statusText);
-//     }
-//     return resp.json();
-//   });
-// }
-// //---------------------------
-
-// await allBooksBackend()
-//     .then((data) => {
-//     //   console.log(data);
-//        createPageAllBooks(data);
-//   })
-//     .catch((err) => console.log(err));
-        
+     
 
     
 // function createPageAllBooks(respArr) {
