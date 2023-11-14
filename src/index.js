@@ -7,5 +7,6 @@ import './js/part-bestseller';
 import './js/support-ukraine';
 import './js/authorization';
 import './js/back-to-top';
+import './js/su';
 
 
