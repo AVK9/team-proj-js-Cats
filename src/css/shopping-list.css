@@ -1,24 +1,27 @@
+.shop-main-flex {
+  display: flex;
+}
 .container-shopping-list {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
+    margin-left: 40px;
+    max-width: 996px;
   }
-  @media screen and (min-width: 1200px) {
+}
+.shopping-list-hidden {
+  @media screen and (max-width: 1439px) {
+    display: none;
   }
 }
 .shopping-list-title {
   display: inline-block;
   margin-top: 40px;
-  margin-left: 20px;
   color: inherit;
   font-weight: 800;
   font-size: 32px;
   letter-spacing: -4px;
   text-shadow: 0px 4px 4px rgba(00, 00, 00, 0.25);
   @media screen and (min-width: 768px) {
-    margin-left: 32px;
     font-size: 48px;
-  }
-  @media screen and (min-width: 1200px) {
-    margin-left: 40px;
   }
 }
 .shopping-list-title span {
@@ -69,7 +72,7 @@
   @media screen and (min-width: 768px) {
     max-width: 704px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     max-width: 996px;
   }
 }
@@ -141,7 +144,6 @@
   margin-top: 8px;
 }
 .list-card-text {
-  width: 193px;
   height: 68px;
 
   display: -webkit-box;
@@ -155,7 +157,7 @@
   @media screen and (min-width: 768px) {
     width: 508px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     width: 808px;
   }
 }
