@@ -322,3 +322,26 @@ trash.addEventListener('click', handlerClick);
 function handlerClick(e) {
   console.dir(e);
 }
+
+// const isDarkMode = localStorage.getItem('darkMode') === 'true';
+// console.log(isDarkMode);
+// const shElements = {
+//   back: document.querySelector('.shopping-list-card'),
+//   title: document.querySelector('.list-card-title'),
+//   subtitle: document.querySelector('.list-card-subtitle'),
+//   text: document.querySelector('.list-card-text'),
+//   contributor: document.querySelector('.list-card-contributor'),
+// };
+// if (isDarkMode) {
+//   shElements.back.classList.add('shop-dark-one');
+//   shElements.title.classList.add('shop-dark-one');
+//   shElements.subtitle.classList.add('shop-dark-two');
+//   shElements.text.classList.add('shop-dark-one');
+//   shElements.contributor.classList.add('shop-dark-three');
+// } else {
+//   shElements.back.classList.remove('shop-dark-one');
+//   shElements.title.classList.remove('shop-dark-one');
+//   shElements.subtitle.classList.remove('shop-dark-two');
+//   shElements.text.classList.remove('shop-dark-one');
+//   shElements.contributor.classList.remove('shop-dark-three');
+// }
