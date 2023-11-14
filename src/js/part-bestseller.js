@@ -2,6 +2,7 @@ import axios from "axios";
 import Notiflix from 'notiflix';
 const BASEURL = 'https://books-backend.p.goit.global';
 const ALLCAT = '/books/top-books';
+const catList = document.querySelector('.categories-list');
 
 const mainContentPage = document.querySelector('.main-content-page');
 const numberBlocksPage = 4;
@@ -17,36 +18,36 @@ const numberBlocksPage = 4;
   }
 }
 
+catList.addEventListener('click', onFirstSwitch);
+let selectedCategory = '';
+function onFirstSwitch(e) {
+    selectedCategory = e.target.textContent;
+    console.log(selectedCategory);
+//   console.log(catList.firstChild);
+// if (e.currentTarget === e.target) {
+//     return;
+//     }
+    
+    if (e.target.textContent === 'All categories') {
+    console.log(selectedCategory);
+        getAllBestCategory();
+    //Cюда вставить функцию H1
+    // mainContentPage.innerHTML = 'Audio Nonfiction';
+  } return
+//   else {
+//   selectedCategory = e.target.textContent
+//   getAllBestCategory()
+//     }
+
+}
+
  getAllBestCategory()
   .then(data => {
-    console.log(data);
+    // console.log(data);
     createPageAllBooks(data);
   })
   .catch(err => console.log(err));
 
-
-//  async function allBooksBackend() {
-//     const BASE_URL = 'https://books-backend.p.goit.global/books/top-books';
-//     return await fetch(`${BASE_URL}`)
-//        .then((resp) => {
-//     if (!resp.ok) {
-//       throw new Error(resp.statusText);
-//     }
-//     return resp.json();
-//   });
-// }
-// //---------------------------
-
-
-//  allBooksBackend()
-//     .then((data) => {
-//       console.log(data);
-//        createPageAllBooks(data);
-//   })
-//     .catch((err) => console.log(err));
-        
-
-    
 function createPageAllBooks(respArr) {
     const headPage = `<h1 class="head-main-h">Best Sellers
   <span class="head-main-h head-main-hdecor">
@@ -91,25 +92,3 @@ function createPageAllBooks(respArr) {
 }
 
 
-//----------------
-// catList.addEventListener('click', onFirstSwitch);
-// function onFirstSwitch(e) {
-//   // selectedCategory = e.target.textContent;
-//   // console.log(catListItem.firstChild);
-// if (e.currentTarget === e.target) {
-//     return;
-//   } if (catList.firstChild === e.target) {
-    
-//     allBooksBackend()
-//     //Cюда вставить функцию H1
-//     // mainContentPage.innerHTML = 'Audio Nonfiction';
-//   }
-// //   else {
-// //   selectedCategory = e.target.textContent
-// //   getSelectedCategory(selectedCategory);
-// }
-// console.log(e.currentTarget);
-//   console.log(e.target);
-    
-    
-// };
