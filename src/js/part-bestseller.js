@@ -14,7 +14,7 @@
 //---------------------------
 
 
-await allBooksBackend()
+ allBooksBackend()
     .then((data) => {
     //   console.log(data);
        createPageAllBooks(data);
