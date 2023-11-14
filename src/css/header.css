@@ -358,6 +358,13 @@ input:checked + .burger-menu-icon {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* .category-dark-hover:hover {
+.categories-list-dark-mode li:hover {
+  color: rgba(234, 198, 69, 1);
+}
+/* .category-dark-hover {
   color: rgba(234, 198, 69, 1);
 } */
+
+.categories-list-dark-mode .category-active {
+  color: rgba(234, 198, 69, 1);
+}
