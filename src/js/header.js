@@ -8,7 +8,8 @@ const logoDarkMode = document.querySelector('.header-logo-2');
 const burgerDarkMode = document.querySelector('.burger-menu-icon');
 const mobileCloseDark = document.querySelector('.mobile-close-icon');
 const categoryDarkText = document.querySelector('.categories-list');
-// const categoriesChildren = categoryDarkText.children;
+// const categoriesChildren = document.querySelector('.categories-list-dark-mode');
+// const categoryDarkActive = document.querySelector('.category-active');
 
 function setThemeFromLocalStorage() {
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -22,6 +23,7 @@ function setThemeFromLocalStorage() {
   mobileCloseDark.classList.toggle('mobile-close-icon-dark', isDarkMode);
   categoryDarkText.classList.toggle('categories-list-dark-mode', isDarkMode);
   // categoriesChildren.classList.toggle('category-dark-hover', isDarkMode);
+  // categoryDarkActive.style.color = 'rgba(234, 198, 69, 1)';
 
   themeSwitch.checked = isDarkMode;
 }
@@ -42,6 +44,7 @@ themeSwitch.addEventListener('change', () => {
   mobileCloseDark.classList.toggle('mobile-close-icon-dark', isDarkMode);
   categoryDarkText.classList.toggle('categories-list-dark-mode', isDarkMode);
   // categoriesChildren.classList.toggle('category-dark-hover', isDarkMode);
+  // categoryDarkActive.style.color = '#EAC645';
 });
 
 // Mobile menu
