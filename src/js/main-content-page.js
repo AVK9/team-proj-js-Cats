@@ -1,12 +1,14 @@
 import axios from "axios";
 import Notiflix from 'notiflix';
+// import getAllBestCategory from './part-bestseller'
+
 const BASEURL = 'https://books-backend.p.goit.global';
 const CATSELECT = '/books/category?category=';
 
 const mainContentPage = document.querySelector('.main-content-page');
 let selectedCategory = '';
 const catListItem = document.querySelector('.categories-list');
-
+const catList = document.querySelector('.categories-list');
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //  function temp() {
 //    getSelectedCategory('Audio Nonfiction');
@@ -58,7 +60,7 @@ function onCategoriesSwitch(e) {
   //   console.log(e.target);
 };
 
-async function getSelectedCategory(selectedCategory) {
+export default async function getSelectedCategory(selectedCategory) {
  
  try {
    const booksSelectedCategory =
@@ -119,3 +121,26 @@ headMaker (selectedCategory)
    mainContentPage.innerHTML = contentPageCat;
 
 }
+
+
+
+// // На стр. BestSellers вікриваемо інфо про книгу або відрацьовуемо клік по кнопці SeeMore
+mainContentPage.addEventListener('click', onBookSwitch);
+
+function onBookSwitch(e) {
+   
+  const currentCategory = e.target.closest('.btn-best-seemore');
+  // console.log(currentCategory);
+
+  if (currentCategory) {
+    let bookCat = currentCategory.getAttribute('category');
+       console.log(bookCat);
+    selectedCategory = bookCat;
+    getSelectedCategory(selectedCategory);
+ 
+  }
+  return;
+}
+// //////////////////////////////////////////////////////
+
+

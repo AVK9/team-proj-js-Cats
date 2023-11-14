@@ -23,6 +23,9 @@ function markupCatList(respArr) {
        `).join("");
     const itemFirstEl = '<li class="category-item category-item-firstelm">All categories</li>';
     catList.innerHTML = itemFirstEl + categoriesList;
+    const catFirstElement = document.querySelector('.category-item-firstelm');
+    // console.log(catFirstElement);
+    catFirstElement.classList.add('category-active');
 }
 ////////////////////////////////////////////////////////////
 
@@ -113,3 +116,5 @@ function markupCatList(respArr) {
     
     
 // // };
+
+
