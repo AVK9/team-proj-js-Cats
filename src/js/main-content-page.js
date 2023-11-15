@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import Notiflix from 'notiflix';
 // import getAllBestCategory from './part-bestseller'
 
@@ -24,7 +24,6 @@ const catList = document.querySelector('.categories-list');
 // setTimeout(temp2, 600)
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-
 catListItem.addEventListener('click', onCategoriesSwitch);
 function onCategoriesSwitch(e) {
   // selectedCategory = e.target.textContent;
@@ -37,19 +36,18 @@ function onCategoriesSwitch(e) {
   if (activeCategory) {
     activeCategory.classList.remove('category-active');
   }
-  
+
   if (e.currentTarget === e.target) {
     return;
   }
 
   if (catListItem.firstChild === e.target) {
-    
+    catListItem.firstChild.classList.add('category-active');
     // getSelectedCategory('Audio Nonfiction')
     // Cюда вставить функцию H1
     // mainContentPage.innerHTML = 'Audio Nonfiction';
-  }
-  else {
-    selectedCategory = e.target.textContent
+  } else {
+    selectedCategory = e.target.textContent;
 
     e.target.classList.add('category-active');
 
@@ -58,44 +56,45 @@ function onCategoriesSwitch(e) {
 
   // console.log(e.currentTarget);
   //   console.log(e.target);
-};
+}
 
 export default async function getSelectedCategory(selectedCategory) {
- 
- try {
-   const booksSelectedCategory =
-     await axios.get(`${BASEURL}${CATSELECT}${selectedCategory}`);
-     onSelectedCategory(booksSelectedCategory.data)
-     return booksSelectedCategory.data
+  try {
+    const booksSelectedCategory = await axios.get(
+      `${BASEURL}${CATSELECT}${selectedCategory}`
+    );
+    onSelectedCategory(booksSelectedCategory.data);
+    return booksSelectedCategory.data;
+  } catch (error) {
+    console.error(error);
+    Notiflix.Notify.failure('Error');
   }
-  catch (error) {
-     console.error(error);
-     Notiflix.Notify.failure('Error');
-  }
-};
+}
 
 function onSelectedCategory(respArr) {
-   
-let headMaidCss;
+  let headMaidCss;
 
-function headMaker (category){
-// const category = "Combined Print and E-Book Nonfiction";
-const fixLast = category.length - category.lastIndexOf(' ');
-const lastWorld = category.substring(category.length - fixLast);
-let lengthFirstPart = category.length - lastWorld.length;
-const firstPartLenght = category - lengthFirstPart;
-const firstPart = category.slice(0, lengthFirstPart);
-// console.log(firstPart);
-// console.log(lastWorld);
- return headMaidCss = `<h1 class="head-main-h">${firstPart}
+  function headMaker(category) {
+    // const category = "Combined Print and E-Book Nonfiction";
+    const fixLast = category.length - category.lastIndexOf(' ');
+    const lastWorld = category.substring(category.length - fixLast);
+    let lengthFirstPart = category.length - lastWorld.length;
+    const firstPartLenght = category - lengthFirstPart;
+    const firstPart = category.slice(0, lengthFirstPart);
+    // console.log(firstPart);
+    // console.log(lastWorld);
+    return (headMaidCss = `<h1 class="head-main-h">${firstPart}
   <span class="head-main-h head-main-hdecor">
   ${lastWorld}
   </span>
-   </h1>`};
-headMaker (selectedCategory)
+   </h1>`);
+  }
+  headMaker(selectedCategory);
   //  console.log(headMaidCss);
-  
-   const markupSelectedCategory = respArr.map(({
+
+  const markupSelectedCategory = respArr
+    .map(
+      ({
         author,
         book_image,
         description,
@@ -103,8 +102,7 @@ headMaker (selectedCategory)
         title,
         list_name,
         _id,
-    }
-   ) => `
+      }) => `
        <li class="part-cards-list-itemcat" id="${_id}">
              <img class="images-prevcat" src="${book_image}"
               alt="${title}" width ='180' loading="lazy" />
@@ -113,34 +111,29 @@ headMaker (selectedCategory)
                    <p class="info-item-author"><b>${author}</b></p>
              </div>
        </li>
-       `).join("");
-     const contentPageCat = `${headMaidCss}
+       `
+    )
+    .join('');
+  const contentPageCat = `${headMaidCss}
 <ul class="main-content-listcat">
     ${markupSelectedCategory}
 </ul>`;
-   mainContentPage.innerHTML = contentPageCat;
-
+  mainContentPage.innerHTML = contentPageCat;
 }
-
-
 
 // // На стр. BestSellers вікриваемо інфо про книгу або відрацьовуемо клік по кнопці SeeMore
 mainContentPage.addEventListener('click', onBookSwitch);
 
 function onBookSwitch(e) {
-   
   const currentCategory = e.target.closest('.btn-best-seemore');
   // console.log(currentCategory);
 
   if (currentCategory) {
     let bookCat = currentCategory.getAttribute('category');
-       console.log(bookCat);
+    console.log(bookCat);
     selectedCategory = bookCat;
     getSelectedCategory(selectedCategory);
- 
   }
   return;
 }
 // //////////////////////////////////////////////////////
-
-
