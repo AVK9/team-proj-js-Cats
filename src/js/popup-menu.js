@@ -33,10 +33,6 @@ if (localStorage.getItem(STORAGE_KEY)) {
 
 console.log(`shoppingList - ${shoppingList}`);
 
-
-
-
-
 // // На стр. BestSellers вікриваемо інфо про книгу або відрацьовуемо клік по кнопці SeeMore
 refs.catPage.addEventListener('click', onBookSwitch);
 
@@ -78,16 +74,16 @@ async function bookDetail(bookId) {
     .catch(err => console.log(err));
 }
 
-
-        `
 let userBookAdd = '';
 
 function creatMarkupBook(respArr) {
-    userBookAdd = respArr;
-    // console.log(userBookAdd);
-// console.log(respArr);
-const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
-     `
+  userBookAdd = respArr;
+  // console.log(userBookAdd);
+  // console.log(respArr);
+  const infoBuyLinks = respArr[0].buy_links
+    .map(
+      ({ name, url }) =>
+        `
 
      <div class="boxMarketPlace">
      <a href="${url}" class="infoMarketPlace" target="_blank"><b>${name}</b></a>
@@ -140,34 +136,29 @@ const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
 refs.btnCloseInfoBook.addEventListener('click', onClickClosefoBook);
 
 function onClickClosefoBook() {
-
-
-    refs.backdropBlock.classList.remove('backdrop-block');
-    refs.bookPage.classList.add('is-hidden');
-    refs.bdropPopup.classList.add('is-hidden');
-    refs.pAddtoCardCongrat.classList.add('is-hidden');
-    refs.btnRemoveShList.classList.add('is-hidden');
-    refs.btnAddtoShList.classList.remove('is-hidden');
-};
-
+  refs.backdropBlock.classList.remove('backdrop-block');
+  refs.bookPage.classList.add('is-hidden');
+  refs.bdropPopup.classList.add('is-hidden');
+  refs.pAddtoCardCongrat.classList.add('is-hidden');
+  refs.btnRemoveShList.classList.add('is-hidden');
+  refs.btnAddtoShList.classList.remove('is-hidden');
+}
 
 refs.btnAddtoShList.addEventListener('click', onClickAddtoShList);
 refs.btnRemoveShList.addEventListener('click', onClickRemoveShList);
 
 function onClickAddtoShList() {
-    refs.btnAddtoShList.classList.add('is-hidden');
-    refs.pAddtoCardCongrat.classList.remove('is-hidden');
-    refs.btnRemoveShList.classList.remove('is-hidden');
-        console.log(userBookAdd);
-    // localStorage.setItem("user-shopping-list", );
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(userBookAdd));
+  refs.btnAddtoShList.classList.add('is-hidden');
+  refs.pAddtoCardCongrat.classList.remove('is-hidden');
+  refs.btnRemoveShList.classList.remove('is-hidden');
+  console.log(userBookAdd);
+  // localStorage.setItem("user-shopping-list", );
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(userBookAdd));
 
-
-//     if (userBookAdd) {
-//         shoppingList.push(12)
-//     }
-  
-};
+  //     if (userBookAdd) {
+  //         shoppingList.push(12)
+  //     }
+}
 
 function onClickRemoveShList() {
   refs.btnAddtoShList.classList.remove('is-hidden');
