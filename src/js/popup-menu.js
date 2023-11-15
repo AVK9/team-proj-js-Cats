@@ -24,6 +24,20 @@ const refs = {
     bookPage: document.querySelector('.box-popup-menu'),
     catPage: document.querySelector('.main-content-page'),
 };
+const STORAGE_KEY = 'user-shopping-list';
+
+let shoppingList;
+if (localStorage.getItem(STORAGE_KEY)) {
+  shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
+} else {
+  shoppingList = [];
+}
+
+console.log(`shoppingList - ${shoppingList}`);
+
+
+
+
 
 
 // // На стр. BestSellers вікриваемо інфо про книгу або відрацьовуемо клік по кнопці SeeMore
@@ -67,8 +81,11 @@ async function bookDetail(bookId) {
         .catch((err) => console.log(err));
 }
 
+let userBookAdd = '';
 
 function creatMarkupBook(respArr) {
+    userBookAdd = respArr;
+    // console.log(userBookAdd);
 // console.log(respArr);
 const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
      `
@@ -116,6 +133,9 @@ function onClickClosefoBook() {
     refs.backdropBlock.classList.remove('backdrop-block');
     refs.bookPage.classList.add('is-hidden');
     refs.bdropPopup.classList.add('is-hidden');
+    refs.pAddtoCardCongrat.classList.add('is-hidden');
+    refs.btnRemoveShList.classList.add('is-hidden');
+    refs.btnAddtoShList.classList.remove('is-hidden');
 };
 
 
@@ -126,7 +146,15 @@ refs.btnRemoveShList.addEventListener('click', onClickRemoveShList);
 function onClickAddtoShList() {
     refs.btnAddtoShList.classList.add('is-hidden');
     refs.pAddtoCardCongrat.classList.remove('is-hidden');
-  refs.btnRemoveShList.classList.remove('is-hidden');
+    refs.btnRemoveShList.classList.remove('is-hidden');
+        console.log(userBookAdd);
+    // localStorage.setItem("user-shopping-list", );
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(userBookAdd));
+
+
+//     if (userBookAdd) {
+//         shoppingList.push(12)
+//     }
   
 };
 
