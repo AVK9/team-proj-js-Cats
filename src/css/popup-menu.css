@@ -104,8 +104,8 @@
   }
 }
 
-.icon-arbottom-btn :focus,
-.icon-arbottom-btn :hover {
+.icon-closes-btn-popup :focus,
+.icon-closes-btn-popup :hover {
   stroke: #eac645;
 }
 .photo-card {
