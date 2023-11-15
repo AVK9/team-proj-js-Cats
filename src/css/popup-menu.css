@@ -232,6 +232,7 @@
   &:hover,
   &:focus {
     color: #fff;
+
     background-color: #4f2ee8;
   }
 }
