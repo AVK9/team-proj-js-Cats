@@ -15,6 +15,7 @@ const refs = {
 
     popupMenuConttent: document.querySelector('.popup-menu-conttent'),
     btnAddtoShList: document.querySelector('.btn-addto-card'),
+    pAddtoCardCongrat: document.querySelector('.addto-card-congrat'),
     btnRemoveShList: document.querySelector('.btn-remove-card'),
 
     bdropPopup: document.querySelector('.backdrop-popup-menu'),
@@ -31,16 +32,19 @@ const refs = {
 function onBookSwitch(e) {
       // const currentBook = e.target.closest(".photo-card")
        const currentBook = e.target.closest(".part-cards-list-itemcat")
-    const currentCategory = e.target.closest(".btnBestSellersSeeMore")
+    const currentBookBest = e.target.closest(".part-cards-list-item")
 
     if (currentBook) {
         let bookId = currentBook.id;
         bookDetail(bookId);
-    } if (currentCategory) {
-        let bookCat = currentCategory.getAttribute("category");
-        selectedCategory = bookCat;
-        booksSelectedCategory(selectedCategory);
-        console.log(bookCat);
+    } if (currentBookBest) {
+         let bookId = currentBookBest.id;
+        bookDetail(bookId);
+
+        // let bookCat = currentCategory.getAttribute("category");
+        // selectedCategory = bookCat;
+        // booksSelectedCategory(selectedCategory);
+        // console.log(bookCat);
      }return
 };
 // //////////////////////////////////////////////////////////////
@@ -89,22 +93,52 @@ const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
              <img class="images-photo" src="${book_image}"
               alt="${title}" loading="lazy" hight="281" />
                 <div class="info">
-                   <p class="info-title"><b>${title}</b></p>
-                   <p class="info-author"><b>${author}</b></p>
-                   <p class="info-buy_links"><b>${infoBuyLinks}</b></p>
+                   <h2 class="info-title">${title}</h2>
+                   <p class="info-author">${author}</p>
                    <p class="info-description">${description}</p>
-
+                   <div class="info-buy-links"><p class="info-buy_links">${infoBuyLinks}</p></div>
+                   
                 </div>
        </div>
        `).join("");
 // refs.bookPage.insertAdjacentHTML('beforeend', pageMarkupBook);
       refs.popupMenuConttent.innerHTML = pageMarkupBook;
-      refs.bookPage.classList.remove('hidden');
-      refs.bdropPopup.classList.remove('hidden')
+      refs.bookPage.classList.remove('is-hidden');
+      refs.bdropPopup.classList.remove('is-hidden')
       refs.backdropBlock.classList.add('backdrop-block')
 //    refs.bookPage.insertAdjacentHTML('beforeend', pageMarkupBook);
 }
 // //////////////////////////////////////////////////////////////
+
+refs.btnCloseInfoBook.addEventListener('click', onClickClosefoBook);
+
+function onClickClosefoBook() {
+    refs.backdropBlock.classList.remove('backdrop-block');
+    refs.bookPage.classList.add('is-hidden');
+    refs.bdropPopup.classList.add('is-hidden');
+};
+
+
+
+refs.btnAddtoShList.addEventListener('click', onClickAddtoShList);
+refs.btnRemoveShList.addEventListener('click', onClickRemoveShList);
+
+function onClickAddtoShList() {
+    refs.btnAddtoShList.classList.add('is-hidden');
+    refs.pAddtoCardCongrat.classList.remove('is-hidden');
+  refs.btnRemoveShList.classList.remove('is-hidden');
+  
+};
+
+function onClickRemoveShList() {
+    refs.btnAddtoShList.classList.remove('is-hidden');
+    refs.pAddtoCardCongrat.classList.add('is-hidden');
+    refs.btnRemoveShList.classList.add('is-hidden');
+
+};
+
+
+
 
 
 
