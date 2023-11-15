@@ -25,13 +25,13 @@ const refs = {
 const STORAGE_KEY = 'user-shopping-list';
 
 let shoppingList;
-if (localStorage.getItem(STORAGE_KEY)) {
-  shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
-} else {
-  shoppingList = [];
-}
+// if (localStorage.getItem(STORAGE_KEY)) {
+//   shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
+// } else {
+//   shoppingList = [];
+// }
 
-console.log(`shoppingList - ${shoppingList}`);
+// console.log(`shoppingList - ${[shoppingList]}`);
 
 // // На стр. BestSellers вікриваемо інфо про книгу або відрацьовуемо клік по кнопці SeeMore
 refs.catPage.addEventListener('click', onBookSwitch);
@@ -69,13 +69,13 @@ async function bookDetail(bookId) {
       return resp.json();
     })
     .then(resp => {
-      //     console.log([resp]);
+        //   console.log([resp]);
       creatMarkupBook([resp]);
     })
     .catch(err => console.log(err));
 }
 
-let userBookAdd = '';
+let userBookAdd = [];
 
 function creatMarkupBook(respArr) {
   userBookAdd = respArr;
@@ -134,6 +134,9 @@ function creatMarkupBook(respArr) {
 }
 // //////////////////////////////////////////////////////////////
 
+let userBookAddStor = [];
+console.log(userBookAddStor);
+  
 refs.btnCloseInfoBook.addEventListener('click', onClickClosefoBook);
 
 function onClickClosefoBook() {
@@ -149,16 +152,54 @@ refs.btnAddtoShList.addEventListener('click', onClickAddtoShList);
 refs.btnRemoveShList.addEventListener('click', onClickRemoveShList);
 
 function onClickAddtoShList() {
-  refs.btnAddtoShList.classList.add('is-hidden');
-  refs.pAddtoCardCongrat.classList.remove('is-hidden');
-  refs.btnRemoveShList.classList.remove('is-hidden');
-  console.log(userBookAdd);
-  // localStorage.setItem("user-shopping-list", );
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(userBookAdd));
+    refs.btnAddtoShList.classList.add('is-hidden');
+    refs.pAddtoCardCongrat.classList.remove('is-hidden');
+    refs.btnRemoveShList.classList.remove('is-hidden');
 
-  //     if (userBookAdd) {
-  //         shoppingList.push(12)
-  //     }
+
+
+
+
+    console.log(userBookAdd);
+    let [{ _id }] = userBookAdd
+    console.log(_id);
+
+    
+    
+
+    userBookAddStor.push(...userBookAdd);
+    console.log(userBookAddStor);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(userBookAddStor));
+ 
+
+    shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    console.log(shoppingList);
+    
+    // console.log(JSON.stringify(...userBookAdd));
+    // console.log(JSON.stringify(...shoppingList));
+
+
+    // const checkId = [{sadasd}, {adsad}, {dasdasdas}]
+    // const checkIasdasd = '643282b1e85766588626a0dc';
+
+
+    
+    // console.log(checkIasdasd.includes(2));
+    
+    
+    // if (checkId) { 
+    //       console.log(checkId);
+    // }
+
+// let result = userBookAdd.filter((item) => {
+
+//                  JSON.stringify(shoppingList).indexOf(JSON.stringify(item)) === -1;
+//             });
+
+// console.log(result);
+    
+    
+
 }
 
 function onClickRemoveShList() {
