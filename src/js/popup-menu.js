@@ -1,5 +1,5 @@
-const appStore1 = '../img/shopping/book_grey.png';
-const amazonImg1 = '../img/shopping/am_grey.png';
+const appStore1 = './img/shopping/book_grey.png';
+const amazonImg1 = './img/shopping/am_grey.png';
 
 const refs = {
   catList: document.querySelector('.categoriesList'),
@@ -22,6 +22,20 @@ const refs = {
   bookPage: document.querySelector('.box-popup-menu'),
   catPage: document.querySelector('.main-content-page'),
 };
+const STORAGE_KEY = 'user-shopping-list';
+
+let shoppingList;
+if (localStorage.getItem(STORAGE_KEY)) {
+  shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
+} else {
+  shoppingList = [];
+}
+
+console.log(`shoppingList - ${shoppingList}`);
+
+
+
+
 
 // // На стр. BestSellers вікриваемо інфо про книгу або відрацьовуемо клік по кнопці SeeMore
 refs.catPage.addEventListener('click', onBookSwitch);
@@ -64,12 +78,17 @@ async function bookDetail(bookId) {
     .catch(err => console.log(err));
 }
 
-function creatMarkupBook(respArr) {
-  // console.log(respArr);
-  const infoBuyLinks = respArr[0].buy_links
-    .map(
-      ({ name, url }) =>
+
         `
+let userBookAdd = '';
+
+function creatMarkupBook(respArr) {
+    userBookAdd = respArr;
+    // console.log(userBookAdd);
+// console.log(respArr);
+const infoBuyLinks = respArr[0].buy_links.map(({name, url }) =>
+     `
+
      <div class="boxMarketPlace">
      <a href="${url}" class="infoMarketPlace" target="_blank"><b>${name}</b></a>
      </div>
@@ -121,19 +140,34 @@ function creatMarkupBook(respArr) {
 refs.btnCloseInfoBook.addEventListener('click', onClickClosefoBook);
 
 function onClickClosefoBook() {
-  refs.backdropBlock.classList.remove('backdrop-block');
-  refs.bookPage.classList.add('is-hidden');
-  refs.bdropPopup.classList.add('is-hidden');
-}
+
+
+    refs.backdropBlock.classList.remove('backdrop-block');
+    refs.bookPage.classList.add('is-hidden');
+    refs.bdropPopup.classList.add('is-hidden');
+    refs.pAddtoCardCongrat.classList.add('is-hidden');
+    refs.btnRemoveShList.classList.add('is-hidden');
+    refs.btnAddtoShList.classList.remove('is-hidden');
+};
+
 
 refs.btnAddtoShList.addEventListener('click', onClickAddtoShList);
 refs.btnRemoveShList.addEventListener('click', onClickRemoveShList);
 
 function onClickAddtoShList() {
-  refs.btnAddtoShList.classList.add('is-hidden');
-  refs.pAddtoCardCongrat.classList.remove('is-hidden');
-  refs.btnRemoveShList.classList.remove('is-hidden');
-}
+    refs.btnAddtoShList.classList.add('is-hidden');
+    refs.pAddtoCardCongrat.classList.remove('is-hidden');
+    refs.btnRemoveShList.classList.remove('is-hidden');
+        console.log(userBookAdd);
+    // localStorage.setItem("user-shopping-list", );
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(userBookAdd));
+
+
+//     if (userBookAdd) {
+//         shoppingList.push(12)
+//     }
+  
+};
 
 function onClickRemoveShList() {
   refs.btnAddtoShList.classList.remove('is-hidden');
