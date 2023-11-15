@@ -381,6 +381,31 @@ input:checked + .burger-menu-icon {
   color: #eac645;
 }
 
+.dark-mode .box-popup-menu {
+  background: #202024;
+  border-color: #fff;
+}
+
+.dark-mode .info-description {
+  color: #fff;
+}
+
+.dark-mode .list-card-amazon-url {
+  filter: brightness(600%);
+  /* mix-blend-mode: luminosity; */
+}
+
+.dark-mode .list-card-amazon-url:hover {
+  filter: brightness(400%);
+}
+
+.dark-mode .icon-closes-btn-popup {
+  stroke: #fff;
+}
+
+.dark-mode .info-by_links {
+  filter: brightness(140%);
+}
 /* Spiner test  */
 
 /* .loader {
