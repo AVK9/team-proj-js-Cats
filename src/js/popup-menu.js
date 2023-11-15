@@ -1,3 +1,8 @@
+
+const appStore1 = './img/shopping/book_grey.png';
+const amazonImg1 = './img/shopping/am_grey.png';
+
+
 const refs = {
   catList: document.querySelector('.categoriesList'),
   catListItem: document.querySelector('.categoriesList'),
@@ -55,7 +60,7 @@ function onBookSwitch(e) {
 }
 // //////////////////////////////////////////////////////////////
 
-console.log();
+
 // // ---->>>>>>   Детальна інформація про книгу  <<<<<<-----//??????????????????????????????
 async function bookDetail(bookId) {
   return await fetch(`https://books-backend.p.goit.global/books/${bookId}`)
@@ -82,6 +87,7 @@ function creatMarkupBook(respArr) {
     .map(
       ({ name, url }) =>
         `
+
      <div class="boxMarketPlace">
      <a href="${url}" class="infoMarketPlace" target="_blank"><b>${name}</b></a>
      </div>
@@ -109,9 +115,14 @@ function creatMarkupBook(respArr) {
                    <h2 class="info-title">${title}</h2>
                    <p class="info-author">${author}</p>
                    <p class="info-description">${description}</p>
-                   <div class="info-buy-links"><p class="info-buy_links">${infoBuyLinks}</p></div>
-                   
-                </div>
+                   <div class="info-buy-links">
+                   <a href="${url}" class="info-by_links" target="_blank" rel="noopener noreferrer nofollow" aria-label="Amazon link">
+                   <img class="link-img" src="${amazonImg1}" alt="Amazon link" aria-label="Buy this book on Amazon" /></a>
+                   <a href="${url}" class="info-by_links" target="_blank" rel="noopener noreferrer nofollow" aria-label="AppleBook link">
+                   <img class="link-img" src="${appStore1}" alt="Appl Books link" aria-label="Buy this book on Appl Books" /></a>
+                   </div>
+                   </div>
+                
        </div>
        `
     )
