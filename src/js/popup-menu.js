@@ -1,5 +1,7 @@
+
 const appStore1 = './img/shopping/book_grey.png';
 const amazonImg1 = './img/shopping/am_grey.png';
+
 
 const refs = {
   catList: document.querySelector('.categoriesList'),
@@ -57,6 +59,7 @@ function onBookSwitch(e) {
   return;
 }
 // //////////////////////////////////////////////////////////////
+
 
 // // ---->>>>>>   Детальна інформація про книгу  <<<<<<-----//??????????????????????????????
 async function bookDetail(bookId) {
