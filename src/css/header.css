@@ -60,6 +60,13 @@
   transition: color 0.5s;
   /* padding-top: 18px;
   padding-bottom: 18px; */
+  transition: transform 500ms;
+}
+
+.a-home:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .a-shoppinglist {
@@ -71,7 +78,13 @@
   letter-spacing: -0.56px;
   text-transform: uppercase;
 
-  transition: color 0.5s;
+  transition: color 0.5s, transform 500ms;
+}
+
+.a-shoppinglist:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .nav-link {
@@ -138,8 +151,8 @@ body {
   bottom: 0;
   background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1) inset;
-
   transition: background 500ms;
+
   border-radius: 34px;
 }
 
@@ -171,6 +184,13 @@ input:checked + .burger-menu-icon {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: transform 500ms;
+}
+
+.header-logo-wrapper:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .nav-item {
@@ -341,13 +361,27 @@ input:checked + .burger-menu-icon {
   background: #eac645;
   border-radius: 36px;
   font-weight: 700;
+  transition: transform 500ms;
 }
+.a-home-active:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .a-shopping-active {
   color: #111;
   padding: 7px 16px;
   background: #eac645;
   border-radius: 36px;
   font-weight: 700;
+  transition: transform 500ms;
+}
+
+.a-shopping-active:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .categories-list {
@@ -419,6 +453,33 @@ input:checked + .burger-menu-icon {
 
 .dark-mode .addto-card-congrat {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .shopping-list-empty-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .bth-num.bth-active {
+  color: #111;
+  background-color: #fff;
+}
+
+.dark-mode .bth-num {
+  color: #fff;
+  background-color: rgba(17, 17, 17, 0.6);
+}
+
+.all-categories-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.all-categories-box::-webkit-scrollbar-thumb {
+  background: (224, 224, 224, 1);
+  transition: background 500ms;
+}
+
+.dark-mode .all-categories-box::-webkit-scrollbar-thumb {
+  background: #11111199;
 }
 /* Spiner test  */
 
