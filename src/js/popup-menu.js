@@ -52,7 +52,7 @@ async function bookDetail(bookId) {
     .catch(err => console.log(err));
 }
 
-let userBookAdd = [];
+let userBookAdd = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
 function auditID() {
   let [{ _id }] = userBookAdd;
