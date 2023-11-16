@@ -46,16 +46,10 @@
   color: var(--violet-color);
   text-transform: uppercase;
   font-weight: 700;
-  transition: 50ms;
+  transition: font-size ease-in-out .1s;
   cursor: pointer;
 }
 
-.category-active {
-  color: var(--violet-color);
-  text-transform: uppercase;
-  font-weight: 700;
-  transition: 50ms;
-}
 
 @media only screen and (min-width: 768px) {
   .category-item {
@@ -70,8 +64,11 @@
     color: var(--violet-color);
     text-transform: uppercase;
     font-weight: 700;
-    transition: 50ms;
-
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out; 
   }
 }
 
@@ -84,4 +81,8 @@
   .categories-list {
     gap: 32px;
   }
+}
+.category-active{
+  text-transform: uppercase;
+  font-weight: 700;
 }
