@@ -1,5 +1,5 @@
-const appStore1 = './img/shopping/book_grey.png';
-const amazonImg1 = './img/shopping/am_grey.png';
+const appStore1 = '/img/shopping/book_grey.png';
+const amazonImg1 = '/img/shopping/am_grey.png';
 
 const refs = {
   catList: document.querySelector('.categoriesList'),
@@ -165,18 +165,18 @@ function onClickClosefoBook() {
   refs.backdropBlock.classList.remove('backdrop-block');
   refs.bookPage.classList.add('is-hidden');
   refs.bdropPopup.classList.add('is-hidden');
-  refs.pAddtoCardCongrat.classList.add('is-hidden');
-  refs.btnRemoveShList.classList.add('is-hidden');
-  refs.btnAddtoShList.classList.remove('is-hidden');
+  refs.pAddtoCardCongrat.classList.add('hidden');
+  refs.btnRemoveShList.classList.add('hidden');
+  refs.btnAddtoShList.classList.remove('hidden');
 }
 
 refs.btnAddtoShList.addEventListener('click', onClickAddtoShList);
 refs.btnRemoveShList.addEventListener('click', onClickRemoveShList);
 
 function onClickAddtoShList() {
-  refs.btnAddtoShList.classList.add('is-hidden');
-  refs.pAddtoCardCongrat.classList.remove('is-hidden');
-  refs.btnRemoveShList.classList.remove('is-hidden');
+  refs.btnAddtoShList.classList.add('hidden');
+  refs.pAddtoCardCongrat.classList.remove('hidden');
+  refs.btnRemoveShList.classList.remove('hidden');
 
   // перевіряє чи є дана книга в локал стор
   // console.log(userBookAdd);
@@ -219,9 +219,9 @@ function onClickAddtoShList() {
 }
 
 function onClickRemoveShList() {
-  refs.btnAddtoShList.classList.remove('is-hidden');
-  refs.pAddtoCardCongrat.classList.add('is-hidden');
-  refs.btnRemoveShList.classList.add('is-hidden');
+  refs.btnAddtoShList.classList.remove('hidden');
+  refs.pAddtoCardCongrat.classList.add('hidden');
+  refs.btnRemoveShList.classList.add('hidden');
 
   //видалення елементу з мас
   const shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -268,4 +268,46 @@ function onClickRemoveShList() {
 
 //      }return
 
+// // };
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     // { name: 'blablabla', price: 200}
+//     for (const potion of this.potions) {
+//       if (potion.name === newPotion.name) {
+//         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//       }
+//     }
+//     this.potions.push(newPotion);
+//   },
+//   removePotion(potionName) {
+//     for (let i = 0; i < this.potions.length; i += 1) {
+//       if (this.potions[i].name === potionName) {
+//         this.potions.splice(i, 1);
+//         return;
+//       }
+//     }
+//     return `Potion ${potionName} is not in inventory!`;
+//   },
+//   updatePotionName(oldName, newName) {
+//     for (const potion of this.potions) {
+//       if (potion.name === oldName) {
+//         potion.name = newName;
+//         return;
+//       }
+//     }
+//     return `Potion ${oldName} is not in inventory!`;
+//   },
+//   // Change code above this line
 // };
+
+// // addPotion({ name: "Speed potion", price: 460 })
+// console.log(addPotion({ name: "Speed potion", price: 460 }));
