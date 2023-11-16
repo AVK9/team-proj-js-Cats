@@ -299,7 +299,8 @@
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.buttons-pagination-left:active {
+.buttons-pagination-left:focus,
+.buttons-pagination-left:hover {
   box-shadow: 0 0 0 5px rgba(17, 17, 17, 0.3);
 }
 
@@ -317,7 +318,8 @@
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.buttons-pagination-right:active {
+.buttons-pagination-right:hover,
+.buttons-pagination-right:focus {
   box-shadow: 0 0 0 5px rgba(234, 198, 69, 0.3);
 }
 

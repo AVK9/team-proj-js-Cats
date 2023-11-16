@@ -10,10 +10,13 @@ backToTop.hidden = true;
         };
     });
 
-    backToTop.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    });
+    backToTop.addEventListener("click", goTop);
+function goTop() {
+  if (window.scrollY > 0) {
+    window.scrollBy(0, -25);
+    setTimeout(goTop, 0); 
+  }
+}
+
 })();
+
