@@ -3,12 +3,11 @@ const swiper = new Swiper('.swiper', {
   spaceBetween: 0,
   loop: true,
   direction:'vertical',
-//   autoplay: {
-//   delay: 1000,
-//   },
+  autoplay: {
+  delay: 3000,
+  },
 
   navigation: {
     nextEl: '.swiper-button-prev',
-    // prevEl: '.swiper-button-next',
   },
 })

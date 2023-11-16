@@ -82,13 +82,20 @@
   animation: bounce 3s infinite;
 }
 
-.button-prev-phon:hover {
-  background-color: #0000ff;
+.button-prev-phon:hover,
+.button-prev-phon:focus {
+  box-shadow: 0 0 0 5px rgba(79, 46, 232, 0.3);
+  background-color: #4f2ee8;
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
 }
 
-.button-prev-phon:hover .icon-arbottom-btn {
-  stroke: var(--caritas-txt);
-  stroke: #fff 100%;
+.button-prev-phon:hover,
+.icon-arbottom-btn:hover,
+.button-prev-phon:focus,
+.icon-arbottom-btn:focus {
+  /* stroke: var(--caritas-txt); */
+  fill: #fff;
 }
 
 @keyframes bounce {
