@@ -26,9 +26,9 @@ const catList = document.querySelector('.categories-list');
 
 catListItem.addEventListener('click', onCategoriesSwitch);
 function onCategoriesSwitch(e) {
-  // selectedCategory = e.target.textContent;
-  // console.log(catListItem.firstChild);
-  if (e.target.textContent === selectedCategory) {
+  const clickedCategory = e.target.textContent.trim();
+
+  if (clickedCategory === selectedCategory) {
     return;
   }
 
@@ -37,25 +37,14 @@ function onCategoriesSwitch(e) {
     activeCategory.classList.remove('category-active');
   }
 
-  if (e.currentTarget === e.target) {
-    return;
-  }
-
-  if (catListItem.firstChild === e.target) {
-    catListItem.firstChild.classList.add('category-active');
-    // getSelectedCategory('Audio Nonfiction')
-    // Cюда вставить функцию H1
-    // mainContentPage.innerHTML = 'Audio Nonfiction';
+  if (clickedCategory === catListItem.firstChild) {
+    selectedCategory = catListItem.firstChild;
+    getSelectedCategory(selectedCategory);
   } else {
-    selectedCategory = e.target.textContent;
-
     e.target.classList.add('category-active');
-
+    selectedCategory = clickedCategory;
     getSelectedCategory(selectedCategory);
   }
-
-  // console.log(e.currentTarget);
-  //   console.log(e.target);
 }
 
 export default async function getSelectedCategory(selectedCategory) {
