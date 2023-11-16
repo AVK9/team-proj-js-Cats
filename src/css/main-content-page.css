@@ -83,7 +83,7 @@
   line-height: 38px;
   letter-spacing: -1.28px;
 
-  color: rgba(17, 17, 17, 1);
+  /* color: rgba(17, 17, 17, 1); */
   margin-bottom: 40px;
 }
 
@@ -203,6 +203,7 @@
   border: 2px solid #4f2ee8;
   width: 124px;
   height: 46px;
+  color: inherit;
   background-color: transparent;
 
   font-size: 14px;
