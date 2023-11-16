@@ -34,5 +34,8 @@
 
   --color-text: rgba(17, 17, 17, 1)
   --color-text-dack-thema: rgba(255, 255, 255, 1)
+
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 250ms;
 }
 

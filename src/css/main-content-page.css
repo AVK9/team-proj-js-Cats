@@ -55,8 +55,8 @@
 }
 @media only screen and (min-width: 1440px) {
   .box-support-ukraine,
-  .allCategoriesBox {
-    width: 356px;
+  .all-categories-box {
+    min-width: 356px;
     height: 472px;
     margin-bottom: 86px;
   }
@@ -214,6 +214,14 @@
   text-transform: uppercase;
 
   margin-bottom: 40px;
+}
+.btn-best-seemore:hover,
+.btn-best-seemore:focus {
+  color: #fff;
+  background-color: #4f2ee8;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 .main-content-listcat {
   display: flex;
