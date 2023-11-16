@@ -43,14 +43,13 @@ function onCategoriesSwitch(e) {
 
   if (catListItem.firstChild === e.target) {
     catListItem.firstChild.classList.add('category-active');
+    selectedCategory = catListItem.firstChild;
     // getSelectedCategory('Audio Nonfiction')
     // Cюда вставить функцию H1
     // mainContentPage.innerHTML = 'Audio Nonfiction';
   } else {
     selectedCategory = e.target.textContent;
-
     e.target.classList.add('category-active');
-
     getSelectedCategory(selectedCategory);
   }
 
