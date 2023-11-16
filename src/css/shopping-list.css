@@ -187,6 +187,7 @@
   display: inline-block;
   background-image: url('../img/shopping/am_grey.png');
   background-size: contain;
+  background-repeat: no-repeat;
   @media screen and (min-width: 768px) {
     width: 48px;
     height: 15px;
@@ -205,6 +206,7 @@
   margin-left: 8px;
   background-image: url('../img/shopping/book_grey.png');
   background-size: contain;
+  background-repeat: no-repeat;
   @media screen and (min-width: 768px) {
     width: 28px;
     height: 28px;
