@@ -154,9 +154,9 @@
   }
 }
 
-.part-cards-list-item {
-  /* background-color: chocolate; */
-}
+/* .part-cards-list-item {
+  background-color: chocolate;
+} */
 .images-prev {
   min-width: 280px;
   width: 335px;
@@ -220,8 +220,8 @@
   flex-wrap: wrap;
   gap: 40px 24px;
 }
-.part-cards-list-itemcat {
-}
+/* .part-cards-list-itemcat {
+} */
 .images-prevcat {
   width: 335px;
   height: 485px;
