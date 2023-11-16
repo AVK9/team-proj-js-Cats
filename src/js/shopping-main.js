@@ -290,7 +290,7 @@ const shopArr = lsAdd(LS_KEY, elements);
 // localStorage.setItem(LS_KEY, JSON.stringify(elements));
 // const shopArr = JSON.parse(localStorage.getItem(LS_KEY));
 
-list.innerHTML = createMarkup(shopArr);
+// list.innerHTML = createMarkup(shopArr);
 
 const test = document.querySelectorAll('.js-test');
 
@@ -304,10 +304,12 @@ const pagination = document.querySelector('.pagination');
 pagination.classList.add('hidden-pagination');
 
 const prev = document.querySelector('.prev');
+prev.disabled = true;
 
 const next = document.querySelector('.next');
 
 const doublePrev = document.querySelector('.double-prev');
+doublePrev.disabled = true;
 
 const doubleNext = document.querySelector('.double-next');
 
@@ -320,7 +322,6 @@ function createMarkup(arr, page, perPage) {
   const start = (page - 1) * perPage;
   const end = start + perPage;
   const itemsRender = arr.slice(start, end);
-
 
   return itemsRender
     .map(
@@ -371,9 +372,19 @@ function renderPage(arr, page, perPage) {
   list.innerHTML = markup;
 
   if (arr.length <= perPage) {
-    pagination.classList.add("hidden-pagination");
+    pagination.classList.add('hidden-pagination');
   } else {
-    pagination.classList.remove("hidden-pagination");
+    pagination.classList.remove('hidden-pagination');
+  }
+
+  const totalPages = Math.ceil(arr.length / perPage);
+
+  if (totalPages <= 2) {
+    doublePrev.classList.add('hidden-pagination');
+    doubleNext.classList.add('hidden-pagination');
+  } else {
+    doublePrev.classList.remove('hidden-pagination');
+    doubleNext.classList.remove('hidden-pagination');
   }
 }
 
@@ -394,6 +405,7 @@ function renderButtonsPagination(arr) {
 
     button.addEventListener('click', () => {
       currentPage = i;
+
       renderPage(arr, currentPage, perPage);
       updateButtonsVisibility();
       updateActiveClass();
@@ -425,63 +437,88 @@ function updateActiveClass() {
 
   allButtons.forEach((button, index) => {
     const isActivePage = index + 1 === currentPage;
+
     if (isActivePage) {
       button.classList.add('bth-active');
+      button.disabled = true;
     } else {
       button.classList.remove('bth-active');
+      button.disabled = false;
     }
   });
 }
 
 function updateButtonsVisibility() {
   const allButtons = document.querySelectorAll('.bth-num');
+  const totalPages = Math.ceil(elements.length / perPage);
 
   allButtons.forEach((button, index) => {
-    if (index + 1 === currentPage || index + 2 === currentPage || index === currentPage) {
-      button.classList.remove("hidden-pagination");
+    if (currentPage === 1) {
+      if (index + 1 <= 3) {
+        button.classList.remove('hidden-pagination');
+      } else {
+        button.classList.add('hidden-pagination');
+      }
+    } else if (currentPage === totalPages) {
+      if (index + 1 > totalPages - 3) {
+        button.classList.remove('hidden-pagination');
+      } else {
+        button.classList.add('hidden-pagination');
+      }
     } else {
-      button.classList.add("hidden-pagination");
+      if (index + 1 === currentPage || index + 2 === currentPage || index === currentPage) {
+        button.classList.remove('hidden-pagination');
+      } else {
+        button.classList.add('hidden-pagination');
+      }
     }
   });
-};
+}
 
-renderPage(elements, currentPage, perPage);
-renderButtonsPagination(elements);
+renderPage(shopArr, currentPage, perPage);
+renderButtonsPagination(shopArr);
 
 prev.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage -= 1;
-    renderPage(elements, currentPage, perPage);
+
+    renderPage(shopArr, currentPage, perPage);
     updateButtonsVisibility();
     updateActiveClass();
-  } else {
+  }
+  
+  if (currentPage === 1) {
     prev.disabled = true;
     doublePrev.disabled = true;
+  } else {
+    next.disabled = false;
+    doubleNext.disabled = false;
   }
-
-  next.disabled = false;
-  doubleNext.disabled = false;
 });
 
 next.addEventListener("click", () => {
-  const totalPages = Math.ceil(elements.length / perPage);
+  const totalPages = Math.ceil(shopArr.length / perPage);
   if (currentPage < totalPages) {
     currentPage += 1;
-    renderPage(elements, currentPage, perPage);
+
+    renderPage(shopArr, currentPage, perPage);
     updateButtonsVisibility();
     updateActiveClass();
-  } else {
+  }
+  
+  if (currentPage === totalPages) {
     next.disabled = true;
     doubleNext.disabled = true;
+  } else {
+    prev.disabled = false;
+    doublePrev.disabled = false;
   }
-
-  prev.disabled = false;
-  doublePrev.disabled = false;
 });
 
 doublePrev.addEventListener('click', () => {
   currentPage = 1;
-  renderPage(elements, currentPage, perPage);
+
+  renderPage(shopArr, currentPage, perPage);
   updateButtonsVisibility();
   updateActiveClass();
 
@@ -493,9 +530,11 @@ doublePrev.addEventListener('click', () => {
 });
 
 doubleNext.addEventListener('click', () => {
-  const totalPages = Math.ceil(elements.length / perPage);
+  const totalPages = Math.ceil(shopArr.length / perPage);
+  
   currentPage = totalPages;
-  renderPage(elements, currentPage, perPage);
+
+  renderPage(shopArr, currentPage, perPage);
   updateButtonsVisibility();
   updateActiveClass();
 
