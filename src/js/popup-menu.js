@@ -24,7 +24,7 @@ const refs = {
 };
 const STORAGE_KEY = 'user-shopping-list';
 
-let shoppingList;
+let shoppingList = [];
 // if (localStorage.getItem(STORAGE_KEY)) {
 //   shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
 // } else {
@@ -81,7 +81,7 @@ function auditID() {
   let boolBook = false;
   const userTestBookLS = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-  userTestBookLS.map(({ _id: idU }) => {
+  userTestBookLS.find(({ _id: idU }) => {
     if (idU === _id) {
       return (boolBook = true);
     }
@@ -142,10 +142,10 @@ function creatMarkupBook(respArr) {
 
   console.log(auditIdBook);
   if (auditIdBook) {
-    refs.btnAddtoShList.classList.add('is-hidden');
-    refs.btnRemoveShList.classList.remove('is-hidden');
+    refs.btnAddtoShList.classList.add('hidden');
+    refs.btnRemoveShList.classList.remove('hidden');
   } else {
-    refs.btnAddtoShList.classList.remove('is-hidden');
+    refs.btnAddtoShList.classList.remove('hidden');
   }
 
   refs.popupMenuConttent.innerHTML = pageMarkupBook;
@@ -157,7 +157,7 @@ function creatMarkupBook(respArr) {
 // //////////////////////////////////////////////////////////////
 
 let userBookAddStor = [];
-console.log(userBookAddStor);
+// console.log(userBookAddStor);
 
 refs.btnCloseInfoBook.addEventListener('click', onClickClosefoBook);
 
@@ -179,24 +179,34 @@ function onClickAddtoShList() {
   refs.btnRemoveShList.classList.remove('hidden');
 
   // перевіряє чи є дана книга в локал стор
-  // console.log(userBookAdd);
+  // console.log('userbook', userBookAdd);
+  // let [{ _id }] = userBookAdd;
+  // console.log('userBookAddStor', userBookAddStor);
+  // console.log('id', _id);
+  // let boolBook = auditID();
+  // console.log('boolBook', boolBook);
+  // console.log('boolbook', boolBook);
+  // якщо відсутня то додає в локал стор
+
   let [{ _id }] = userBookAdd;
-  // console.log(_id);
   let boolBook = false;
-  userBookAddStor.map(({ _id: idU }) => {
+  shoppingList.find(({ _id: idU }) => {
     if (idU === _id) {
-      boolBook = true;
-      return;
+      return (boolBook = true);
     }
   });
-  if (!boolBook) {
-    userBookAddStor.push(...userBookAdd);
-    // console.log('userBookAddStor', userBookAddStor);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(userBookAddStor));
 
-    shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    // console.log('shoppingList', shoppingList);
+  if (boolBook) {
+    return;
   }
+  console.log('shoppingList', shoppingList);
+  shoppingList.push(...userBookAdd);
+  // console.log('userBookAddStor', userBookAddStor);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(shoppingList));
+  // console.log('userBookAddStor setitem', userBookAddStor);
+  shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  // console.log('shoppingList getitem', shoppingList);
+  // console.log('shoppingList', shoppingList);
 
   // console.log(JSON.stringify(...userBookAdd));
   // console.log(JSON.stringify(...shoppingList));
@@ -224,14 +234,20 @@ function onClickRemoveShList() {
   refs.btnRemoveShList.classList.add('hidden');
 
   //видалення елементу з мас
-  const shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   // console.log(shoppingList);
   let [{ _id: idBook }] = userBookAdd;
   // console.log(idBook);
   const product = shoppingList.findIndex(({ _id: id }) => id === idBook);
-  shoppingList.splice(product, 1);
-
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(shoppingList));
+  console.log('product', product);
+  if (product !== -1) {
+    shoppingList.splice(product, 1);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(shoppingList));
+    refs.btnAddtoShList.classList.remove('hidden');
+    refs.btnRemoveShList.classList.add('hidden');
+  } else {
+    return;
+  }
 }
 
 // refs.bookPage.addEventListener('click', onClickBookInfo);
