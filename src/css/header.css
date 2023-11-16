@@ -406,6 +406,20 @@ input:checked + .burger-menu-icon {
 .dark-mode .info-by_links {
   filter: brightness(140%);
 }
+
+.dark-mode .btn-addto-card {
+  background-color: transparent;
+  color: #fff;
+}
+
+.dark-mode .btn-remove-card {
+  background-color: transparent;
+  color: #fff;
+}
+
+.dark-mode .addto-card-congrat {
+  color: rgba(255, 255, 255, 0.5);
+}
 /* Spiner test  */
 
 /* .loader {
