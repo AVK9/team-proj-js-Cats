@@ -30,22 +30,38 @@
 .shopping-list-title span {
   color: var(--violet-color);
 }
+.shopping-list-empty-test {
+  max-width: 375px;
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media screen and (min-width: 1440px) {
+    /* width: 996px;   */
+  }
+}
 .shopping-list-empty {
-  max-width: 265px;
-  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 120px;
   @media screen and (min-width: 768px) {
     margin-top: 140px;
-    max-width: 349px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 996px;
   }
 }
 .shopping-list-empty-text {
   display: block;
+  width: 244px;
   color: rgba(0, 0, 0, 0.6000000238418579);
   text-align: center;
   font-size: 14px;
   @media screen and (min-width: 768px) {
+    width: 349px;
     font-size: 18px;
   }
 }

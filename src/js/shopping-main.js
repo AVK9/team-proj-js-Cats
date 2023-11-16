@@ -1,3 +1,4 @@
+import trashIcon from '../img/global/icons.svg#trash';
 const empty = document.querySelector('.shopping-list-empty');
 const list = document.querySelector('.js-shop-list');
 
@@ -55,7 +56,7 @@ function createMarkup(arr, page = 1, perPage = 4) {
                   </div>
                   <div class="shop-trash-bg js-test">
                     <svg class="shop-trash">
-                      <use href="./img/global/icons.svg#trash"></use>
+                      <use href="${trashIcon}"></use>
                     </svg>
                   </div>
                  </div>
@@ -74,8 +75,8 @@ function createMarkup(arr, page = 1, perPage = 4) {
           </li>`
     )
     .join('');
-};
-  
+}
+
 function renderPage(arr, page, perPage) {
   const markup = createMarkup(arr, page, perPage);
   list.innerHTML = markup;
@@ -87,9 +88,9 @@ function renderPage(arr, page, perPage) {
   }
 
   if (arr.length <= perPage) {
-   pagination.classList.add('hidden-pagination');
+    pagination.classList.add('hidden-pagination');
   } else {
-   pagination.classList.remove('hidden-pagination');
+    pagination.classList.remove('hidden-pagination');
   }
 
   const totalPages = Math.ceil(arr.length / perPage);
@@ -210,7 +211,7 @@ prev.addEventListener('click', () => {
     prev.disabled = true;
     doublePrev.disabled = true;
   }
-  
+
   next.disabled = false;
   doubleNext.disabled = false;
 });
