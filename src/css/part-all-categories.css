@@ -1,12 +1,13 @@
+/* All categories */
+
+/* all categories box div*/
+
 .all-categories-box {
   min-width: 280px;
   width: 335px;
   height: 228px;
   overflow-y: scroll;
-
   margin-bottom: 40px;
-  /* margin-left: 20px;
-  margin-top: 40px; */
 }
 
 .all-categories-box::-webkit-scrollbar {
@@ -20,6 +21,7 @@
   width: 8px;
   height: 114px;
 }
+
 @media only screen and (min-width: 768px) {
   .all-categories-box {
     overflow-y: scroll;
@@ -32,12 +34,15 @@
   }
 }
 
+/* all categories item li*/
+
 .category-item {
   font-size: 16px;
   line-height: 18px;
   /*color: #11111199;*/
   text-align: left;
 }
+
 .category-item:focus {
   color: var(--violet-color);
 }
@@ -46,10 +51,13 @@
   color: var(--violet-color);
   text-transform: uppercase;
   font-weight: 700;
-  transition: font-size ease-in-out .1s;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   cursor: pointer;
 }
-
 
 @media only screen and (min-width: 768px) {
   .category-item {
@@ -59,6 +67,7 @@
     text-align: left;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .category-item:hover {
     color: var(--violet-color);
@@ -68,15 +77,18 @@
     -moz-transition: opacity 0.5s ease-in-out;
     -ms-transition: opacity 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out; 
+    transition: opacity 0.5s ease-in-out;
   }
 }
+
+/* all categories list  ul*/
 
 .categories-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 @media only screen and (min-width: 768px) {
   .categories-list {
     gap: 32px;
