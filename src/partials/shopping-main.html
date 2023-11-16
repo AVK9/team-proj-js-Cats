@@ -1,17 +1,18 @@
 <section class="container-shopping-list js-shopping-list">
-  <h2 class="shopping-list-title">Shopping<span> List</span></h2>
-  <div class="shopping-list-empty hidden">
-    <p class="shopping-list-empty-text">
-      This page is empty, add some books and proceed to order.
-    </p>
-    <img
-      class="shopping-list-empty-img"
-      src="./img/shopping/shop-is-empty.png"
-      alt=" books"
-      loading="lazy"
-    />
+  <h2 class="shopping-list-title">Shopping<span> List</span></h2><svg class="shop-trash">
+    <use href="./img/global/icons.svg#trash"></use>
+  </svg>
+  <div class="shopping-list-empty-test hidden">
+
+    <div class="shopping-list-empty">
+      <p class="shopping-list-empty-text">
+        This page is empty, add some books and proceed to order.
+      </p>
+      <img class="shopping-list-empty-img" src="./img/shopping/shop-is-empty.png" alt=" books" loading="lazy" />
+    </div>
   </div>
   <ul class="shop-list js-shop-list"></ul>
+
   <div class="pagination">
     <button type="button" class="double-prev buttons-pagination-left">
       <svg width="24" height="24" class="icons icon-left">

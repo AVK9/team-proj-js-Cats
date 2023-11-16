@@ -19,7 +19,7 @@ const refs = {
   catPage: document.querySelector('.main-content-page'),
 };
 const STORAGE_KEY = 'user-shopping-list';
-let shoppingList = [];
+let shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
 refs.catPage.addEventListener('click', onBookSwitch);
 
@@ -52,7 +52,7 @@ async function bookDetail(bookId) {
     .catch(err => console.log(err));
 }
 
-let userBookAdd = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+let userBookAdd = [];
 
 function auditID() {
   let [{ _id }] = userBookAdd;

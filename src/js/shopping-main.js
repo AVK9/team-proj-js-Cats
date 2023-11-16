@@ -1,4 +1,6 @@
-const empty = document.querySelector('.shopping-list-empty');
+import trashIcon from '../img/global/icons.svg#trash';
+
+const empty = document.querySelector('.shopping-list-empty-test');
 const list = document.querySelector('.js-shop-list');
 
 const LS_KEY = 'user-shopping-list';
@@ -54,7 +56,7 @@ if (shopArr.length === 0) {
                     </div>
                     <div class="shop-trash-bg js-test">
                       <svg class="shop-trash">
-                        <use href="./img/global/icons.svg#trash"></use>
+                        <use href="${trashIcon}"></use>
                       </svg>
                     </div>
                   </div>
