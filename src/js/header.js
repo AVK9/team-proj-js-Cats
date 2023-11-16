@@ -81,6 +81,25 @@ window.onload = checkWidth;
 window.onresize = checkWidth;
 
 // Header color changer
+function updateClassBasedOnPageHome() {
+  const myElement = document.querySelector('.a-home');
+  const secondElem = document.querySelector('.home-mobile');
+
+  const currentPath = window.location.pathname;
+
+  if (
+    currentPath.endsWith('/team-proj-js-Cats/') ||
+    currentPath.endsWith('/team-proj-js-Cats/index.html')
+  ) {
+    myElement.classList.add('a-home-active');
+    secondElem.classList.add('a-home-active');
+  } else {
+    myElement.classList.remove('a-home-active');
+    secondElem.classList.remove('a-home-active');
+  }
+}
+
+updateClassBasedOnPageHome();
 
 function updateClassBasedOnPageShopping() {
   const myElement = document.querySelector('.a-shoppinglist');
@@ -96,18 +115,3 @@ function updateClassBasedOnPageShopping() {
 }
 
 updateClassBasedOnPageShopping();
-
-function updateClassBasedOnPageHome() {
-  const myElement = document.querySelector('.a-home');
-  const secondElem = document.querySelector('.home-mobile');
-
-  if (window.location.href.indexOf('index.html') > -1) {
-    myElement.classList.add('a-home-active');
-    secondElem.classList.add('a-home-active');
-  } else {
-    myElement.classList.remove('a-home-active');
-    secondElem.classList.remove('a-home-active');
-  }
-}
-
-updateClassBasedOnPageHome();
