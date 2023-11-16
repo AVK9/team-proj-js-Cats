@@ -1,342 +1,50 @@
-// empty.classList.remove('hidden');
-
 const empty = document.querySelector('.shopping-list-empty');
 const list = document.querySelector('.js-shop-list');
 
-const LS_KEY = 'shopping-list';
-const elements = [
-  {
-    _id: '1',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '2',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '3',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '4',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '5',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '6',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '7',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '8',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '9',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '10',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '11',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '12',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '13',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '14',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '15',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '16',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '17',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '18',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-  {
-    _id: '19',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/0593593804?tag=NYTBSREV-20',
-    author: 'Prince Harry',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9780593593806.jpg',
-    book_uri: 'nyt://book/0db35be1-02f0-5fe8-8fdc-d4a669b5852f',
-    contributor: 'by Prince Harry',
-    description:
-      'The Duke of Sussex details his struggles with the royal family, loss of his mother, service in the British Army and marriage to Meghan Markle. Read by the author. 15 hours, 39 minutes unabridged.',
-    publisher: 'Random House Audio',
-    title: 'SPARE',
-  },
-  {
-    _id: '20',
-    list_name: 'Audio Nonfiction',
-    amazon_product_url: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-    author: 'Jennette McCurdy',
-    book_image:
-      'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-    book_uri: 'nyt://book/dade20d6-b303-510c-9687-48eab9308755',
-    contributor: 'by Jennette McCurdy',
-    description:
-      'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-    publisher: 'Simon & Schuster Audio',
-    title: "I'M GLAD MY MOM DIED",
-  },
-];
-const shopArr = lsAdd(LS_KEY, elements);
-// localStorage.setItem(LS_KEY, JSON.stringify(elements));
-// const shopArr = JSON.parse(localStorage.getItem(LS_KEY));
+const LS_KEY = 'user-shopping-list';
+const shopArr = JSON.parse(localStorage.getItem(LS_KEY));
+console.log('shopArr', shopArr);
+console.log(shopArr.length);
+if (shopArr.length === 0) {
+  empty.classList.remove('hidden');
+} else {
+  const pagination = document.querySelector('.pagination');
+  pagination.classList.add('hidden-pagination');
 
-// list.innerHTML = createMarkup(shopArr);
+  const prev = document.querySelector('.prev');
+  prev.disabled = true;
 
-const test = document.querySelectorAll('.js-test');
+  const next = document.querySelector('.next');
 
-if (test) {
-  for (let i = 0; i < test.length; i += 1) {
-    test[i].addEventListener('click', handlerClick);
-  }
-}
+  const doublePrev = document.querySelector('.double-prev');
+  doublePrev.disabled = true;
 
-const pagination = document.querySelector('.pagination');
-pagination.classList.add('hidden-pagination');
+  const doubleNext = document.querySelector('.double-next');
 
-const prev = document.querySelector('.prev');
-prev.disabled = true;
+  const buttonsNumbers = document.querySelector('.buttons-numbers');
 
-const next = document.querySelector('.next');
+  const perPage = 4;
+  let currentPage = 1;
 
-const doublePrev = document.querySelector('.double-prev');
-doublePrev.disabled = true;
+  function createMarkup(arr, page = 1, perPage = 4) {
+    const start = (page - 1) * perPage;
+    const end = start + perPage;
+    const itemsRender = arr.slice(start, end);
 
-const doubleNext = document.querySelector('.double-next');
-
-const buttonsNumbers = document.querySelector('.buttons-numbers');
-
-const perPage = 4;
-let currentPage = 1;
-
-function createMarkup(arr, page, perPage) {
-  const start = (page - 1) * perPage;
-  const end = start + perPage;
-  const itemsRender = arr.slice(start, end);
-
-  return itemsRender
-    .map(
-      ({
-        _id,
-        list_name,
-        amazon_product_url,
-        author,
-        book_image,
-        book_uri,
-        contributor,
-        description,
-        publisher,
-        title,
-      }) => `<li data-id="${_id}" class="shopping-list-card js-trash">
+    return itemsRender
+      .map(
+        ({
+          _id,
+          list_name,
+          amazon_product_url,
+          author,
+          book_image,
+          book_uri,
+          contributor,
+          description,
+          publisher,
+          title,
+        }) => `<li data-id="${_id}" class="shopping-list-card js-trash">
               <div class="shopping-list-card-flex"><img class="list-card-img" src="${book_image}" alt="${author}">
                 <div>
                   <div class="shop-trash-flex">
@@ -363,232 +71,214 @@ function createMarkup(arr, page, perPage) {
                 </div>
               </div>
             </li>`
-    )
-    .join('');
-}
-
-function renderPage(arr, page, perPage) {
-  const markup = createMarkup(arr, page, perPage);
-  list.innerHTML = markup;
-
-  if (arr.length <= perPage) {
-    pagination.classList.add('hidden-pagination');
-  } else {
-    pagination.classList.remove('hidden-pagination');
+      )
+      .join('');
   }
-
-  const totalPages = Math.ceil(arr.length / perPage);
-
-  if (totalPages <= 2) {
-    doublePrev.classList.add('hidden-pagination');
-    doubleNext.classList.add('hidden-pagination');
-  } else {
-    doublePrev.classList.remove('hidden-pagination');
-    doubleNext.classList.remove('hidden-pagination');
-  }
-}
-
-function renderButtonsPagination(arr) {
-  const totalPages = Math.ceil(arr.length / perPage);
-
-  buttonsNumbers.innerHTML = '';
-
-  for (let i = 1; i <= totalPages; i += 1) {
-    const button = document.createElement('button');
-    button.classList.add('bth-num');
-    button.textContent = i;
-    buttonsNumbers.appendChild(button);
-
-    if (i === currentPage) {
-      button.classList.add('bth-active');
+  function renderPage(arr, page, perPage) {
+    const markup = createMarkup(arr, page, perPage);
+    list.innerHTML = markup;
+    if (arr.length <= perPage) {
+      pagination.classList.add('hidden-pagination');
+    } else {
+      pagination.classList.remove('hidden-pagination');
     }
 
-    button.addEventListener('click', () => {
-      currentPage = i;
+    const totalPages = Math.ceil(arr.length / perPage);
 
-      renderPage(arr, currentPage, perPage);
-      updateButtonsVisibility();
-      updateActiveClass();
-      
-      if (currentPage === 1) {
-        prev.disabled = true;
-        doublePrev.disabled = true;
-      } else {
-        prev.disabled = false;
-        doublePrev.disabled = false;
+    if (totalPages <= 2) {
+      doublePrev.classList.add('hidden-pagination');
+      doubleNext.classList.add('hidden-pagination');
+    } else {
+      doublePrev.classList.remove('hidden-pagination');
+      doubleNext.classList.remove('hidden-pagination');
+    }
+  }
+
+  function renderButtonsPagination(arr) {
+    const totalPages = Math.ceil(arr.length / perPage);
+
+    buttonsNumbers.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i += 1) {
+      const button = document.createElement('button');
+      button.classList.add('bth-num');
+      button.textContent = i;
+      buttonsNumbers.appendChild(button);
+
+      if (i === currentPage) {
+        button.classList.add('bth-active');
       }
 
-      if (currentPage === totalPages) {
+      button.addEventListener('click', () => {
+        currentPage = i;
+
+        renderPage(arr, currentPage, perPage);
+        updateButtonsVisibility();
+        updateActiveClass();
+
+        if (currentPage === 1) {
+          prev.disabled = true;
+          doublePrev.disabled = true;
+        } else {
+          prev.disabled = false;
+          doublePrev.disabled = false;
+        }
+
+        if (currentPage === totalPages) {
           next.disabled = true;
           doubleNext.disabled = true;
-      } else {
+        } else {
           next.disabled = false;
           doubleNext.disabled = false;
+        }
+      });
+    }
+
+    updateButtonsVisibility();
+    updateActiveClass();
+  }
+
+  function updateActiveClass() {
+    const allButtons = document.querySelectorAll('.bth-num');
+
+    allButtons.forEach((button, index) => {
+      const isActivePage = index + 1 === currentPage;
+
+      if (isActivePage) {
+        button.classList.add('bth-active');
+        button.disabled = true;
+      } else {
+        button.classList.remove('bth-active');
+        button.disabled = false;
       }
     });
   }
 
-  updateButtonsVisibility();
-  updateActiveClass();
-}
+  function updateButtonsVisibility() {
+    const allButtons = document.querySelectorAll('.bth-num');
+    const totalPages = Math.ceil(shopArr.length / perPage);
 
-function updateActiveClass() {
-  const allButtons = document.querySelectorAll('.bth-num');
+    allButtons.forEach((button, index) => {
+      if (currentPage === 1) {
+        if (index + 1 <= 3) {
+          button.classList.remove('hidden-pagination');
+        } else {
+          button.classList.add('hidden-pagination');
+        }
+      } else if (currentPage === totalPages) {
+        if (index + 1 > totalPages - 3) {
+          button.classList.remove('hidden-pagination');
+        } else {
+          button.classList.add('hidden-pagination');
+        }
+      } else {
+        if (
+          index + 1 === currentPage ||
+          index + 2 === currentPage ||
+          index === currentPage
+        ) {
+          button.classList.remove('hidden-pagination');
+        } else {
+          button.classList.add('hidden-pagination');
+        }
+      }
+    });
+  }
 
-  allButtons.forEach((button, index) => {
-    const isActivePage = index + 1 === currentPage;
+  renderPage(shopArr, currentPage, perPage);
+  renderButtonsPagination(shopArr);
 
-    if (isActivePage) {
-      button.classList.add('bth-active');
-      button.disabled = true;
-    } else {
-      button.classList.remove('bth-active');
-      button.disabled = false;
+  prev.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+
+      renderPage(shopArr, currentPage, perPage);
+      updateButtonsVisibility();
+      updateActiveClass();
     }
-  });
-}
 
-function updateButtonsVisibility() {
-  const allButtons = document.querySelectorAll('.bth-num');
-  const totalPages = Math.ceil(elements.length / perPage);
-
-  allButtons.forEach((button, index) => {
     if (currentPage === 1) {
-      if (index + 1 <= 3) {
-        button.classList.remove('hidden-pagination');
-      } else {
-        button.classList.add('hidden-pagination');
-      }
-    } else if (currentPage === totalPages) {
-      if (index + 1 > totalPages - 3) {
-        button.classList.remove('hidden-pagination');
-      } else {
-        button.classList.add('hidden-pagination');
-      }
+      prev.disabled = true;
+      doublePrev.disabled = true;
     } else {
-      if (index + 1 === currentPage || index + 2 === currentPage || index === currentPage) {
-        button.classList.remove('hidden-pagination');
-      } else {
-        button.classList.add('hidden-pagination');
-      }
+      next.disabled = false;
+      doubleNext.disabled = false;
     }
   });
-}
 
-renderPage(shopArr, currentPage, perPage);
-renderButtonsPagination(shopArr);
+  next.addEventListener('click', () => {
+    const totalPages = Math.ceil(shopArr.length / perPage);
+    if (currentPage < totalPages) {
+      currentPage += 1;
 
-prev.addEventListener("click", () => {
-  if (currentPage > 1) {
-    currentPage -= 1;
+      renderPage(shopArr, currentPage, perPage);
+      updateButtonsVisibility();
+      updateActiveClass();
+    }
+
+    if (currentPage === totalPages) {
+      next.disabled = true;
+      doubleNext.disabled = true;
+    } else {
+      prev.disabled = false;
+      doublePrev.disabled = false;
+    }
+  });
+
+  doublePrev.addEventListener('click', () => {
+    currentPage = 1;
 
     renderPage(shopArr, currentPage, perPage);
     updateButtonsVisibility();
     updateActiveClass();
-  }
-  
-  if (currentPage === 1) {
+
     prev.disabled = true;
-    doublePrev.disabled = true;
-  } else {
     next.disabled = false;
-    doubleNext.disabled = false;
-  }
-});
 
-next.addEventListener("click", () => {
-  const totalPages = Math.ceil(shopArr.length / perPage);
-  if (currentPage < totalPages) {
-    currentPage += 1;
+    doublePrev.disabled = true;
+    doubleNext.disabled = false;
+  });
+
+  doubleNext.addEventListener('click', () => {
+    const totalPages = Math.ceil(shopArr.length / perPage);
+
+    currentPage = totalPages;
 
     renderPage(shopArr, currentPage, perPage);
     updateButtonsVisibility();
     updateActiveClass();
-  }
-  
-  if (currentPage === totalPages) {
+
     next.disabled = true;
     doubleNext.disabled = true;
-  } else {
+
     prev.disabled = false;
     doublePrev.disabled = false;
-  }
-});
+  });
 
-doublePrev.addEventListener('click', () => {
-  currentPage = 1;
+  list.addEventListener('click', handlerShop);
 
-  renderPage(shopArr, currentPage, perPage);
-  updateButtonsVisibility();
-  updateActiveClass();
+  function handlerShop(e) {
+    if (
+      e.target.classList.value === 'shop-trash-bg js-test' ||
+      e.target.classList.value === 'shop-trash'
+    ) {
+      const currentProduct = e.target.closest('.js-trash');
+      const idBook = currentProduct.dataset.id;
 
-  prev.disabled = true;
-  next.disabled = false;
+      const confirmProduct = confirm(`Remove book?`);
 
-  doublePrev.disabled = true;
-  doubleNext.disabled = false;
-});
+      if (confirmProduct) {
+        const product = shopArr.findIndex(({ _id: id }) => id === idBook);
+        shopArr.splice(product, 1);
 
-doubleNext.addEventListener('click', () => {
-  const totalPages = Math.ceil(shopArr.length / perPage);
-  
-  currentPage = totalPages;
+        localStorage.setItem(LS_KEY, JSON.stringify(shopArr));
 
-  renderPage(shopArr, currentPage, perPage);
-  updateButtonsVisibility();
-  updateActiveClass();
-
-  next.disabled = true;
-  doubleNext.disabled = true;
-
-  prev.disabled = false;
-  doublePrev.disabled = false;
-});
-
-function handlerClick(e) {
-  if (e.target === e.currentTarget) {
-    return;
-  }
-  const currentProduct = e.currentTarget.closest('.js-trash');
-  const idBook = currentProduct.dataset.id;
-
-  const confirmProduct = confirm(`Remove book?`);
-
-  if (confirmProduct) {
-    const product = shopArr.findIndex(({ _id: id }) => id === idBook);
-    shopArr.splice(product, 1);
-
-    localStorage.setItem(LS_KEY, JSON.stringify(shopArr));
-
-    list.innerHTML = createMarkup(shopArr);
-
-    // list.insertAdjacentHTML('afterbegin', createMarkup(shopArr));
-  }
-}
-function lsAdd(key, arr) {
-  localStorage.setItem(key, JSON.stringify(arr));
-  return JSON.parse(localStorage.getItem(LS_KEY));
-}
-
-list.addEventListener('click', handlerShop);
-
-function handlerShop(e) {
-  if (
-    e.target.classList.value === 'shop-trash-bg js-test' ||
-    e.target.classList.value === 'shop-trash'
-  ) {
-    const currentProduct = e.target.closest('.js-trash');
-    const idBook = currentProduct.dataset.id;
-
-    const confirmProduct = confirm(`Remove book?`);
-
-    if (confirmProduct) {
-      const product = shopArr.findIndex(({ _id: id }) => id === idBook);
-      shopArr.splice(product, 1);
-
-      localStorage.setItem(LS_KEY, JSON.stringify(shopArr));
-
-      list.innerHTML = createMarkup(shopArr);
+        list.innerHTML = createMarkup(shopArr);
+        if (shopArr.length === 0) {
+          empty.classList.remove('hidden');
+          pagination.classList.add('hidden');
+        }
+      }
     }
   }
 }
