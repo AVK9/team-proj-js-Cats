@@ -88,6 +88,7 @@
 
 .button-prev-phon:hover .icon-arbottom-btn {
   stroke: var(--caritas-txt);
+  stroke: #fff 100%;
 }
 
 @keyframes bounce {
