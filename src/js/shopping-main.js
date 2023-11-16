@@ -6,12 +6,9 @@ const LS_KEY = 'user-shopping-list';
 const shopArr = JSON.parse(localStorage.getItem(LS_KEY));
 console.log('shopArr', shopArr);
 console.log(shopArr.length);
-if (shopArr.length === 0) {
-  empty.classList.remove('hidden');
-}
 
 const pagination = document.querySelector('.pagination');
-pagination.classList.add('hidden-pagination');
+pagination.classList.add('visually-hidden');
 
 const prev = document.querySelector('.prev');
 prev.disabled = true;
@@ -28,7 +25,7 @@ const buttonsNumbers = document.querySelector('.buttons-numbers');
 const perPage = 4;
 let currentPage = 1;
 
-function createMarkup(arr, page = 1, perPage = 4) {
+function createMarkup(arr, page, perPage) {
   const start = (page - 1) * perPage;
   const end = start + perPage;
   const itemsRender = arr.slice(start, end);
@@ -82,25 +79,27 @@ function renderPage(arr, page, perPage) {
   list.innerHTML = markup;
 
   if (arr.length === 0) {
-    pagination.classList.add('hidden-pagination');
+    pagination.classList.add('visually-hidden');
+    empty.classList.remove('visually-hidden');
   } else {
-    pagination.classList.remove('hidden-pagination');
+    pagination.classList.remove('visually-hidden');
+    empty.classList.add('visually-hidden');
   }
 
   if (arr.length <= perPage) {
-    pagination.classList.add('hidden-pagination');
+    pagination.classList.add('visually-hidden');
   } else {
-    pagination.classList.remove('hidden-pagination');
+    pagination.classList.remove('visually-hidden');
   }
 
   const totalPages = Math.ceil(arr.length / perPage);
 
   if (totalPages <= 2) {
-    doublePrev.classList.add('hidden-pagination');
-    doubleNext.classList.add('hidden-pagination');
+    doublePrev.classList.add('visually-hidden');
+    doubleNext.classList.add('visually-hidden');
   } else {
-    doublePrev.classList.remove('hidden-pagination');
-    doubleNext.classList.remove('hidden-pagination');
+    doublePrev.classList.remove('visually-hidden');
+    doubleNext.classList.remove('visually-hidden');
   }
 }
 
@@ -171,15 +170,15 @@ function updateButtonsVisibility() {
   allButtons.forEach((button, index) => {
     if (currentPage === 1) {
       if (index + 1 <= 3) {
-        button.classList.remove('hidden-pagination');
+        button.classList.remove('visually-hidden');
       } else {
-        button.classList.add('hidden-pagination');
+        button.classList.add('visually-hidden');
       }
     } else if (currentPage === totalPages) {
       if (index + 1 > totalPages - 3) {
-        button.classList.remove('hidden-pagination');
+        button.classList.remove('visually-hidden');
       } else {
-        button.classList.add('hidden-pagination');
+        button.classList.add('visually-hidden');
       }
     } else {
       if (
@@ -187,9 +186,9 @@ function updateButtonsVisibility() {
         index + 2 === currentPage ||
         index === currentPage
       ) {
-        button.classList.remove('hidden-pagination');
+        button.classList.remove('visually-hidden');
       } else {
-        button.classList.add('hidden-pagination');
+        button.classList.add('visually-hidden');
       }
     }
   });
@@ -265,6 +264,13 @@ doubleNext.addEventListener('click', () => {
   doublePrev.disabled = false;
 });
 
+function redirectToLastPage() {
+  const totalPages = Math.ceil(shopArr.length / perPage);
+  currentPage = totalPages;
+  renderPage(shopArr, currentPage, perPage);
+  renderButtonsPagination(shopArr);
+}
+
 list.addEventListener('click', handlerShop);
 
 function handlerShop(e) {
@@ -282,10 +288,17 @@ function handlerShop(e) {
       shopArr.splice(product, 1);
 
       localStorage.setItem(LS_KEY, JSON.stringify(shopArr));
+      
+      renderPage(shopArr, currentPage, perPage);
+      renderButtonsPagination(shopArr);
 
-      list.innerHTML = createMarkup(shopArr);
-      if (shopArr.length === 0) {
-        empty.classList.remove('hidden');
+      const totalPages = Math.ceil(shopArr.length / perPage);
+
+      if (currentPage > totalPages) {
+        redirectToLastPage();
+      } else {
+        renderPage(shopArr, currentPage, perPage);
+        renderButtonsPagination(shopArr);
       }
     }
   }
