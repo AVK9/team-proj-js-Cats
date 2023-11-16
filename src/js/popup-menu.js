@@ -1,5 +1,5 @@
-const appStore1 = '/img/shopping/book_grey.png';
-const amazonImg1 = '/img/shopping/am_grey.png';
+import appStore1 from '../img/shopping/book_grey.png';
+import amazonImg1 from '../img/shopping/am_grey.png';
 
 const refs = {
   catList: document.querySelector('.categoriesList'),
