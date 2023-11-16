@@ -132,6 +132,17 @@ function onBookSwitch(e) {
     let bookCat = currentCategory.getAttribute('category');
     console.log(bookCat);
     selectedCategory = bookCat;
+
+    const categories = catListItem.children;
+    for (let category of categories) {
+      const categoryText = category.textContent.trim();
+      if (categoryText === selectedCategory) {
+        category.classList.add('category-active');
+      } else {
+        category.classList.remove('category-active');
+      }
+    }
+
     getSelectedCategory(selectedCategory);
   }
   return;
