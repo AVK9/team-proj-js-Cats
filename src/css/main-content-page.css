@@ -161,6 +161,7 @@
   height: 485px;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .images-prev {
   min-width: 280px;
