@@ -46,9 +46,15 @@ function createPageAllBooks(respArr) {
       .map(
         ({ _id, author, book_image, title }) => `
       <li class="part-cards-list-item" id="${_id}" >
+         <div class="images-card-box">
          <img class="images-prev" src="${book_image}" alt="${title}" width ='180'>
-         <p class="info-item-title">${title}</p>
-         <p class="info-item-author">${author}</p>
+          <p class="hover-text-card">quick view</p>
+          </div>
+
+              <div class="info-block-card">
+                   <p class="infos-item-title">${title}</p>
+                   <p class="infos-item-author">${author}</p>
+             </div>
       </li>
        `
       )
