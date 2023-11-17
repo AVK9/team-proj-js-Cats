@@ -3,7 +3,7 @@ const empty = document.querySelector('.shopping-list-empty');
 const list = document.querySelector('.js-shop-list');
 
 const LS_KEY = 'user-shopping-list';
-const shopArr = JSON.parse(localStorage.getItem(LS_KEY));
+const shopArr = JSON.parse(localStorage.getItem(LS_KEY)) || [];
 console.log('shopArr', shopArr);
 console.log(shopArr.length);
 
@@ -288,7 +288,7 @@ function handlerShop(e) {
       shopArr.splice(product, 1);
 
       localStorage.setItem(LS_KEY, JSON.stringify(shopArr));
-      
+
       renderPage(shopArr, currentPage, perPage);
       renderButtonsPagination(shopArr);
 
