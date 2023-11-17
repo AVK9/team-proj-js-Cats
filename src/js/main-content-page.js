@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
 // import getAllBestCategory from './part-bestseller'
-
+const loader = document.querySelector('.loader');
 const BASEURL = 'https://books-backend.p.goit.global';
 const CATSELECT = '/books/category?category=';
 
@@ -10,18 +10,7 @@ let selectedCategory = '';
 const catListItem = document.querySelector('.categories-list');
 const catList = document.querySelector('.categories-list');
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//  function temp() {
-//    getSelectedCategory('Audio Nonfiction');
-// };temp();
-//  function  temp2() {
-//   const headmainh = `<h1 class="head-main-h">Best Sellers
-//   <span class="head-main-h head-main-hdecor">
-//   Books
-//   </span>
-//    </h1>`;
-//   mainContentPage.insertAdjacentHTML('afterbegin', headmainh)
-// };
-// setTimeout(temp2, 600)
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 catListItem.addEventListener('click', onCategoriesSwitch);
@@ -59,9 +48,11 @@ function onCategoriesSwitch(e) {
 
 export default async function getSelectedCategory(selectedCategory) {
   try {
+loader.style.display = 'initial';
     const booksSelectedCategory = await axios.get(
       `${BASEURL}${CATSELECT}${selectedCategory}`
     );
+    loader.style.display = 'none';
     onSelectedCategory(booksSelectedCategory.data);
     return booksSelectedCategory.data;
   } catch (error) {

@@ -4,15 +4,16 @@ import Notiflix from 'notiflix';
 const BASEURL = 'https://books-backend.p.goit.global';
 const ALLCAT = '/books/top-books';
 const catList = document.querySelector('.categories-list');
-
+const loader = document.querySelector('.loader');
 const mainContentPage = document.querySelector('.main-content-page');
 const categoryItem = document.querySelector('.category-item');
 const numberBlocksPage = 18;
 
 async function getAllBestCategory() {
   try {
+    loader.style.display = 'initial';
     const allBestCategory = await axios.get(`${BASEURL}${ALLCAT}`);
-
+loader.style.display = 'none';
     // console.log(AllBestCategory);
     return allBestCategory.data;
   } catch (error) {
