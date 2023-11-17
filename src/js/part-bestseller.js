@@ -47,7 +47,7 @@ function createPageAllBooks(respArr) {
         ({ _id, author, book_image, title }) => `
       <li class="part-cards-list-item" id="${_id}" >
          <div class="images-card-box">
-         <img class="images-prev" src="${book_image}" alt="${title}" width ='180'>
+         <img class="images-prev" src="${book_image}" alt="${title}" width ='180' loading="lazy">
           <p class="hover-text-card">quick view</p>
           </div>
 
