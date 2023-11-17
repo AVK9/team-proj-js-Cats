@@ -32,18 +32,17 @@
   border-radius: 18px;
   border: 2px solid #111;
   background: #f6f6f6;
-  top: 50%;
   right: 50%;
   overflow: hidden;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: createTransitionFor('transform', '400ms');
   padding: 40px 24px;
   display: flex;
   flex-direction: column;
@@ -106,7 +105,9 @@
 
 .icon-closes-btn-popup :focus,
 .icon-closes-btn-popup :hover {
-  stroke: #eac645;
+  stroke: #4f2ee8;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .photo-card {
   @media screen and (min-width: 768px) {
@@ -154,18 +155,23 @@
   }
 }
 
-.link-img {
+.link-img-amazon {
   filter: grayscale(100%);
-  mix-blend-mode: luminosity;
-  transition: transform 200ms, filter 200ms;
-
-  &:hover,
-  &:focus {
-    mix-blend-mode: normal;
-    transition-duration: 0.3s;
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
-  }
 }
+.link-img-amazon:hover,
+.link-img-amazon:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.link-img-bookapp {
+  filter: grayscale(100%);
+}
+
+.link-img-bookapp:hover,
+.link-img-bookapp:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
 .info-author {
   margin-bottom: 18px;
   font-style: italic;
@@ -206,7 +212,7 @@
 
   padding: 14px 23px;
   min-width: 210px;
-  height: 46px;
+  height: 64px;
 
   border-radius: 40px;
   border: 2px solid #4f2ee8;

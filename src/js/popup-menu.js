@@ -1,5 +1,5 @@
-import appStore1 from '../img/shopping/book_grey.png';
-import amazonImg1 from '../img/shopping/am_grey.png';
+import appStore1 from '../img/shopping/book.png';
+import amazonImg1 from '../img/shopping/am.png';
 
 const refs = {
   catList: document.querySelector('.categoriesList'),
@@ -97,11 +97,11 @@ function creatMarkupBook(respArr) {
           <p class="info-author">${author}</p>
           <p class="info-description">${description}</p>
           <div class="info-buy-links">
-            <a href="${url}" class="info-by_links" target="_blank" rel="noopener noreferrer nofollow" aria-label="Amazon link">
-              <img class="link-img" src="${amazonImg1}" alt="Amazon link" aria-label="Buy this book on Amazon" />
+            <a href="${buy_links[0].url}" class="info-by-links" target="_blank" rel="noopener noreferrer nofollow" aria-label="Amazon link">
+              <img class="link-img-amazon" src="${amazonImg1}" alt="Amazon link" aria-label="Buy this book on Amazon" />
             </a>
-            <a href="${url}" class="info-by_links" target="_blank" rel="noopener noreferrer nofollow" aria-label="AppleBook link">
-              <img class="link-img" src="${appStore1}" alt="Apple Books link" aria-label="Buy this book on Apple Books" />
+            <a href="${buy_links[1].url}" class="info-by-links" target="_blank" rel="noopener noreferrer nofollow" aria-label="AppleBook link">
+              <img class="link-img-bookapp" src="${appStore1}" alt="Apple Books link" aria-label="Buy this book on Apple Books" />
             </a>
           </div>
         </div>
