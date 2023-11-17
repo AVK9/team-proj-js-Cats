@@ -209,7 +209,7 @@ input:checked + .burger-menu-icon {
   transition: fill 500ms;
 }
 .header-logo-2 {
-  transition: fill 500ms;
+  transition: fill 500ms, filter 500ms;
 }
 
 .open-menu-btn {
@@ -479,7 +479,31 @@ input:checked + .burger-menu-icon {
 }
 
 .dark-mode .all-categories-box::-webkit-scrollbar-thumb {
-  background: #11111199;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .footer-text {
+  color: #dcdcdc;
+}
+
+.footer {
+  transition: background-color 500ms;
+}
+
+.dark-mode .footer {
+  background-color: #111;
+}
+
+.cat-img {
+  transition: filter 500ms;
+}
+
+.dark-mode .cat-img {
+  filter: invert(300%);
+}
+
+.dark-mode .header-logo-2 {
+  filter: invert(100%);
 }
 /* Spiner test  */
 /* .loader {
