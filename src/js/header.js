@@ -4,7 +4,7 @@ const themeSwitch = document.getElementById('themeSwitch');
 const header = document.querySelector('.header');
 const shoppingListLink = document.querySelector('.a-shoppinglist');
 const shoppingBagDarkMode = document.querySelector('.shopping-bag');
-const logoDarkMode = document.querySelector('.header-logo-2');
+// const logoDarkMode = document.querySelector('.header-logo-2');
 const burgerDarkMode = document.querySelector('.burger-menu-icon');
 const mobileCloseDark = document.querySelector('.mobile-close-icon');
 // const categoryDarkText = document.querySelector('.categories-list');
@@ -18,7 +18,7 @@ function setThemeFromLocalStorage() {
   header.classList.toggle('header-dark-mode', isDarkMode);
   shoppingListLink.classList.toggle('dark-mode-header-link', isDarkMode);
   shoppingBagDarkMode.classList.toggle('shopping-bag-dark', isDarkMode);
-  logoDarkMode.classList.toggle('logo-dark-mode', isDarkMode);
+  // logoDarkMode.classList.toggle('logo-dark-mode', isDarkMode);
   burgerDarkMode.classList.toggle('burger-menu-icon-dark', isDarkMode);
   mobileCloseDark.classList.toggle('mobile-close-icon-dark', isDarkMode);
   // categoryDarkText.classList.toggle('categories-list-dark-mode', isDarkMode);
@@ -39,7 +39,7 @@ themeSwitch.addEventListener('change', () => {
   header.classList.toggle('header-dark-mode', isDarkMode);
   shoppingListLink.classList.toggle('dark-mode-header-link', isDarkMode);
   shoppingBagDarkMode.classList.toggle('shopping-bag-dark', isDarkMode);
-  logoDarkMode.classList.toggle('logo-dark-mode', isDarkMode);
+  // logoDarkMode.classList.toggle('logo-dark-mode', isDarkMode);
   burgerDarkMode.classList.toggle('burger-menu-icon-dark', isDarkMode);
   mobileCloseDark.classList.toggle('mobile-close-icon-dark', isDarkMode);
   // categoryDarkText.classList.toggle('categories-list-dark-mode', isDarkMode);
