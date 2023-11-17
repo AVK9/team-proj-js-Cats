@@ -45,7 +45,7 @@ import"./assets/su-6796add9.js";import{a as b,N as f}from"./assets/vendor-77e6b4
    </h1>`;let a="",s="";for(let i=0;i<$;i++){let d=t[i].list_name;const g=t[i].books.map(({_id:n,author:k,book_image:p,title:L})=>`
       <li class="part-cards-list-item" id="${n}" >
          <div class="images-card-box">
-         <img class="images-prev" src="${p}" alt="${L}" width ='180'>
+         <img class="images-prev" src="${p}" alt="${L}" width ='180' loading="lazy">
           <p class="hover-text-card">quick view</p>
           </div>
 
