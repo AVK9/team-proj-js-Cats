@@ -103,8 +103,12 @@ function onSelectedCategory(respArr) {
         _id,
       }) => `
        <li class="part-cards-list-itemcat" id="${_id}">
+
+             <div class="images-card-box">
              <img class="images-prevcat" src="${book_image}"
               alt="${title}" width ='180' loading="lazy" />
+              <p class="hover-text-card">quick view</p>
+              </div>
                 <div class="info">
                    <p class="info-item-title"><b>${title}</b></p>
                    <p class="info-item-author"><b>${author}</b></p>
