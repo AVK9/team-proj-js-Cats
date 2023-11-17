@@ -1,6 +1,6 @@
 /* All categories */
 
-/* all categories box div*/
+/* all categories box div */
 
 .all-categories-box {
   min-width: 280px;
@@ -34,7 +34,7 @@
   }
 }
 
-/* all categories item li*/
+/* all categories item li */
 
 .category-active {
   color: var(--violet-color);
@@ -92,7 +92,7 @@
   }
 }
 
-/* all categories list  ul*/
+/* all categories list  ul */
 
 .categories-list {
   display: flex;
