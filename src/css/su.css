@@ -63,12 +63,18 @@
 }
 
 .cont-for-btn {
+  position: relative;
   margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-
+.loader {
+  z-index: 100;
+  position: absolute;
+  bottom: -9px;
+  left: 140px;
+}
 .button-prev-phon {
   /* position: absolute; */
   bottom: 24px;

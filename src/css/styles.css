@@ -19,6 +19,7 @@
 @import url('./back-to-top.css');
 @import url('./su.css');
 @import url('./footer.css');
+@import url('./loader.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
