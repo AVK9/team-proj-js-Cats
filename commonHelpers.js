@@ -1,4 +1,4 @@
-import"./assets/su-bdd5bd75.js";import{a as k,N as S}from"./assets/vendor-77e6b4aa.js";const E="https://books-backend.p.goit.global",q="/books/category-list";async function R(){try{return(await k.get(`${E}${q}`)).data}catch(t){console.error(t)}}document.querySelector(".main-content-page");const M=document.querySelector(".categories-list");R().then(t=>{T(t)}).catch(t=>{S.Notify.failure("Error"),console.log(t)});function T(t){const e=t.map(({list_name:n})=>`
+import"./assets/su-2f3a700e.js";import{a as k,N as S}from"./assets/vendor-77e6b4aa.js";const q="https://books-backend.p.goit.global",E="/books/category-list";async function R(){try{return(await k.get(`${q}${E}`)).data}catch(t){console.error(t)}}document.querySelector(".main-content-page");const M=document.querySelector(".categories-list");R().then(t=>{T(t)}).catch(t=>{S.Notify.failure("Error"),console.log(t)});function T(t){const e=t.map(({list_name:n})=>`
        <li class="category-item">${n}</li>
        `).join(""),s='<li class="category-item category-item-firstelm">All categories</li>';M.innerHTML=s+e,document.querySelector(".category-item-firstelm").classList.add("category-active")}const P="https://books-backend.p.goit.global",G="/books/category?category=",v=document.querySelector(".main-content-page");let c="";const A=document.querySelector(".categories-list");document.querySelector(".categories-list");A.addEventListener("click",Q);function Q(t){if(t.target.textContent===c)return;const e=document.querySelector(".category-active");e&&e.classList.remove("category-active"),t.currentTarget!==t.target&&(A.firstChild===t.target?(A.firstChild.classList.add("category-active"),c=A.firstChild):(c=t.target.textContent,t.target.classList.add("category-active"),C(c)))}async function C(t){try{const e=await k.get(`${P}${G}${t}`);return x(e.data),e.data}catch(e){console.error(e),S.Notify.failure("Error")}}function x(t){let e;function s(i){const d=i.length-i.lastIndexOf(" "),g=i.substring(i.length-d);let m=i.length-g.length;return e=`<h1 class="head-main-h">${i.slice(0,m)}
   <span class="head-main-h head-main-hdecor">
@@ -6,8 +6,12 @@ import"./assets/su-bdd5bd75.js";import{a as k,N as S}from"./assets/vendor-77e6b4
   </span>
    </h1>`}s(c);const a=t.map(({author:i,book_image:d,description:g,amazon_product_url:m,title:r,list_name:h,_id:p})=>`
        <li class="part-cards-list-itemcat" id="${p}">
+
+             <div class="images-card-box">
              <img class="images-prevcat" src="${d}"
               alt="${r}" width ='180' loading="lazy" />
+              <p class="hover-text-card">quick view</p>
+              </div>
                 <div class="info">
                    <p class="info-item-title"><b>${r}</b></p>
                    <p class="info-item-author"><b>${i}</b></p>
