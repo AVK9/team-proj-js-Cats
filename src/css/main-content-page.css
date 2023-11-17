@@ -157,33 +157,35 @@
 /* .part-cards-list-item {
   background-color: chocolate;
 } */
+.images-card-box {
+  height: 485px;
+  position: relative;
+  overflow: hidden;
+}
 .images-prev {
   min-width: 280px;
   width: 335px;
   height: 485px;
   border-radius: 8px;
-  margin-bottom: 14px;
 }
 @media only screen and (min-width: 768px) {
+  .images-card-box,
   .images-prev {
     min-width: 218px;
     height: 316px;
   }
 }
 @media only screen and (min-width: 1440px) {
+  .images-card-box,
   .images-prev {
     min-width: 180px;
     height: 256px;
   }
 }
-.images-card-box {
-  position: relative;
-  overflow: hidden;
-}
 
 .hover-text-card {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   color: #111;
   font-size: 14px;
   font-style: normal;
@@ -199,27 +201,32 @@
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0px 0px 8px 8px;
   padding-top: 26px;
+  /* z-index: 10; */
 }
 .part-cards-list-itemcat:hover .hover-text-card,
 .part-cards-list-itemcat:focus .hover-text-card {
   transform: translateY(0%);
 }
-
-.info-item-title {
+.info-block-card {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.infos-item-title {
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.64px;
   text-transform: uppercase;
-  margin-bottom: 4px;
 }
-.info-item-author {
+.infos-item-author {
+  margin-top: 4px;
   color: #b4afaf;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
-  line-height: 14px;
+  line-height: 14px; /* 116.667% */
   letter-spacing: -0.48px;
 }
 .best-sellers-group {
